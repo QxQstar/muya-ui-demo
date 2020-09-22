@@ -2,11 +2,26 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './assets/css/global.scss';
 import { Layout } from './components/layout';
+import { Login } from "./pages/login";
 import * as serviceWorker from './serviceWorker';
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route
+} from 'react-router-dom';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Layout />
+      <Router>
+          <Switch>
+              <Route path='/login'>
+                  <Login/>
+              </Route>
+              <Route path='/'>
+                  <Layout/>
+              </Route>
+          </Switch>
+      </Router>
   </React.StrictMode>,
   document.getElementById('root')
 );
