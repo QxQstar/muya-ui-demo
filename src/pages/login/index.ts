@@ -1,1 +1,2 @@
-export { default as Login } from './login';
+import loadable from '@loadable/component'
+export const Login  = loadable(() => import('./login'))

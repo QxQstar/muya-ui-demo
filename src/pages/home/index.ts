@@ -1,1 +1,2 @@
-export {default as Home} from './home'
+import loadable from '@loadable/component'
+export const Home  = loadable(() => import('./home'))
