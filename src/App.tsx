@@ -3,7 +3,7 @@ import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
 import {Login} from "./pages/login";
 import {Layout} from "./components/layout";
 
-function App() {
+function App(): React.ReactElement {
   return (
       <Router>
         <Switch>

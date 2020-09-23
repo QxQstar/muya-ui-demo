@@ -5,7 +5,7 @@ import { AppMain } from '../appMain';
 import style from './index.module.scss';
 
 
-export default function Layout() {
+export default function Layout(): React.ReactElement {
     return (
         <div className={style.layoutContainer}>
             <PageHeader/>
