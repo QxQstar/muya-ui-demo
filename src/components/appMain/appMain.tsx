@@ -5,7 +5,7 @@ import {
 } from 'react-router-dom'
 import { Home } from '../../pages/home'
 
-export default function AppMain() {
+export default function AppMain(): React.ReactElement {
     return (
         <Switch>
             <Route path='/'>
