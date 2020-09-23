@@ -1,10 +1,11 @@
 import React, {useState} from 'react'
 import {Dropdown, InlineButton, Menu, MenuItem} from '@qunhe/muya-ui'
-import {FoldIcon, ResetIcon, UnfoldIcon, UserForbiddenIcon} from '@qunhe/muya-theme-light';
+import {FoldIcon, ReloadIcon, ResetIcon, UnfoldIcon, UserForbiddenIcon} from '@qunhe/muya-theme-light';
 import styled from 'styled-components';
 import {useHistory} from "react-router-dom";
 import ThemeContext, {Theme} from '../../context/themeContext'
 import style from './index.module.scss'
+import {Lang} from '../../reducers/lang'
 
 const StyleFoldTcon = styled(FoldIcon)`
     margin-left: 10px
@@ -16,6 +17,8 @@ const StyleUnfoldIcon = styled(UnfoldIcon)`
 interface IDropdownMenuProps {
     theme: Theme;
     toggleTheme: (theme: Theme) => void;
+    lang: Lang;
+    setLang: (lang: Lang) => void
 }
 
 function DropdownMenu(props: IDropdownMenuProps): React.ReactElement {
@@ -25,6 +28,9 @@ function DropdownMenu(props: IDropdownMenuProps): React.ReactElement {
     }
     const changeTheme = () => {
         props.theme === Theme.Light ? props.toggleTheme(Theme.Dark) : props.toggleTheme(Theme.Light)
+    }
+    const changeLang = () => {
+        props.lang === Lang.en ? props.setLang(Lang.zh) : props.setLang(Lang.en)
     }
     return (
         <Menu>
@@ -40,12 +46,18 @@ function DropdownMenu(props: IDropdownMenuProps): React.ReactElement {
             >
                 切换主题
             </MenuItem>
+            <MenuItem
+                icon={<ReloadIcon />}
+                onClick={changeLang}
+            >
+                切换语言
+            </MenuItem>
         </Menu>
     )
 }
 
 
-export default function PageHeader(): React.ReactElement {
+export default function PageHeader(props: any): React.ReactElement {
     const [open, setOpen] = useState(false)
     const onVisibleChange = (visible: boolean): void => {
         setOpen(visible)
@@ -69,6 +81,8 @@ export default function PageHeader(): React.ReactElement {
                                 overlay={<DropdownMenu
                                     theme={theme}
                                     toggleTheme={toggleTheme}
+                                    lang={props.lang}
+                                    setLang={props.setLang}
                                 />}
                                 onVisibleChange={onVisibleChange}
                             >
