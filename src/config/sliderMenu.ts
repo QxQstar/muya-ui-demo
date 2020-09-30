@@ -1,10 +1,31 @@
 import { Home } from "../pages/home";
+import { Theme } from "../pages/theme";
+import { Background } from '../pages/background';
+import { ISilderMenu } from '../type/menu';
 
-export default function () {
+export default function (): ISilderMenu[] {
     return [
         {
-            path:'/',
-            component:Home
+            path: '/',
+            exact: true,
+            menuName: '首页',
+            component: Home
+        },
+        {
+            path: '/theme',
+            menuName: '主题',
+            component: Theme
+        },
+        {
+            path: '/basic/component',
+            menuName: '基础组件',
+            routes: [
+                {
+                    path: '/basic/component/background',
+                    menuName: '背景',
+                    component: Background
+                }
+            ]
         }
     ];
 }
