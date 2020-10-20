@@ -1,5 +1,4 @@
 import { connect } from 'react-redux'
-import { bindActionCreators } from 'redux'
 import Header from './pageHeader'
 import { setLang } from '../../reducers/lang'
 
@@ -10,13 +9,9 @@ const mapStateToProps = (state: any) => {
     }
 }
 
-const mapDispatchProps = (dispatch: any) => {
-    return {
-        setLang: bindActionCreators(setLang, dispatch)
-    }
-}
-
 export const PageHeader =  connect(
     mapStateToProps,
-    mapDispatchProps
+    {
+        setLang
+    }
 )(Header)

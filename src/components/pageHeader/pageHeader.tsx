@@ -35,18 +35,21 @@ function DropdownMenu(props: IDropdownMenuProps): React.ReactElement {
     return (
         <Menu>
             <MenuItem
+                key="1"
                 icon={<UserForbiddenIcon />}
                 onClick={logout}
             >
                 退出登录
             </MenuItem>
             <MenuItem
+                key="2"
                 icon={<ResetIcon/>}
                 onClick={changeTheme}
             >
-                切换主题
+                切换主题 {props.theme}
             </MenuItem>
             <MenuItem
+                key="3"
                 icon={<ReloadIcon />}
                 onClick={changeLang}
             >
@@ -81,8 +84,7 @@ export default function PageHeader(props: any): React.ReactElement {
                                 overlay={<DropdownMenu
                                     theme={theme}
                                     toggleTheme={toggleTheme}
-                                    lang={props.lang}
-                                    setLang={props.setLang}
+                                    {...props}
                                 />}
                                 onVisibleChange={onVisibleChange}
                             >
