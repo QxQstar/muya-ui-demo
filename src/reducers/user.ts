@@ -1,31 +1,56 @@
+import { Dispatch } from "redux"
+
 export interface IUser {
     name: string
-    [attr: string]: string
+    [attr: string]: string | number
+}
+
+export interface IStateShpeUser {
+    isFetching: boolean
+    data?: IUser
 }
 
 enum UserActionType {
-    changeName
+    reciveUser,
+    requestUser,
 }
 interface IAction {
     type: UserActionType,
     payload?: any
 }
 
-const user: IUser= {
-    name: 'Bella'
+// action
+export const reciveUser = (data: IUser): IAction => ({type: UserActionType.reciveUser, payload: data})
+export const requestUser = (): IAction => ({type: UserActionType.requestUser})
+export const fetchUser = (id: number) => {
+    return (dispatch: Dispatch) => {
+        dispatch(requestUser())
+        return new Promise((resolve) => {
+            setTimeout(() => {
+                dispatch(reciveUser({
+                    name: 'bella',
+                    id: id,
+                    nickname: '何遇'
+                }))
+                resolve()
+            }, 2000)
+        })
+    }
 }
 
-export function changeName(name: string): IAction {
-    return {type: UserActionType.changeName, payload: name}
-} 
 
-export default function User(state: IUser = user, action: IAction) {
+// reducer
+export default function User(state: IStateShpeUser = {isFetching: false}, action: IAction) {
     switch (action.type) {
-        case UserActionType.changeName:
+        case UserActionType.reciveUser:
             return {
-                name: action.payload
+                isFetching: false,
+                data: action.payload
             }    
-
+        case UserActionType.requestUser:
+            return {
+                isFetching: true
+            }
         default:
             return state
     }
