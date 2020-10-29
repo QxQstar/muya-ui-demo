@@ -5,7 +5,8 @@ import styled from 'styled-components';
 import {useHistory} from "react-router-dom";
 import ThemeContext, {Theme} from '../../context/themeContext'
 import style from './index.module.scss'
-import {Lang} from '../../reducers/lang'
+import { Lang } from '../../reducers/lang'
+import AXR from '../../AXR'
 
 const StyleFoldTcon = styled(FoldIcon)`
     margin-left: 10px
@@ -18,7 +19,6 @@ interface IDropdownMenuProps {
     theme: Theme;
     toggleTheme: (theme: Theme) => void;
     lang: Lang;
-    setLang: (lang: Lang) => void
 }
 
 function DropdownMenu(props: IDropdownMenuProps): React.ReactElement {
@@ -30,7 +30,7 @@ function DropdownMenu(props: IDropdownMenuProps): React.ReactElement {
         props.theme === Theme.Light ? props.toggleTheme(Theme.Dark) : props.toggleTheme(Theme.Light)
     }
     const changeLang = () => {
-        props.lang === Lang.en ? props.setLang(Lang.zh) : props.setLang(Lang.en)
+        props.lang === Lang.en ? AXR.action.langAction.dispatch(Lang.zh) : AXR.action.langAction.dispatch(Lang.en)
     }
     return (
         <Menu>
@@ -53,7 +53,7 @@ function DropdownMenu(props: IDropdownMenuProps): React.ReactElement {
                 icon={<ReloadIcon />}
                 onClick={changeLang}
             >
-                切换语言
+                切换语言 {props.lang}
             </MenuItem>
         </Menu>
     )

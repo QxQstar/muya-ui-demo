@@ -1,17 +1,14 @@
 import { connect } from 'react-redux'
 import Header from './pageHeader'
-import { setLang } from '../../reducers/lang'
+import { IAppState } from '../../AXR'
 
 
-const mapStateToProps = (state: any) => {
+const mapStateToProps = (state: IAppState) => {
     return {
-        lang: state.lang
+        lang: state.main.lang
     }
 }
 
 export const PageHeader =  connect(
-    mapStateToProps,
-    {
-        setLang
-    }
+    mapStateToProps
 )(Header)

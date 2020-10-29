@@ -2426,6 +2426,11 @@ axobject-query@^2.0.2:
   resolved "http://npm-registry.qunhequnhe.com/axobject-query/download/axobject-query-2.2.0.tgz#943d47e10c0b704aa42275e20edf3722648989be"
   integrity sha1-lD1H4QwLcEqkInXiDt83ImSJib4=
 
+axr@^1.0.13:
+  version "1.0.13"
+  resolved "https://registry.npm.taobao.org/axr/download/axr-1.0.13.tgz#2be346ad112dcaacdc0948750ee4aff9a2bd5ef4"
+  integrity sha1-K+NGrREtyqzcCUh1DuSv+aK9XvQ=
+
 babel-code-frame@^6.22.0:
   version "6.26.0"
   resolved "http://npm-registry.qunhequnhe.com/babel-code-frame/download/babel-code-frame-6.26.0.tgz#63fd43f7dc1e3bb7ce35947db8fe369a3f58c74b"
@@ -5650,6 +5655,11 @@ immer@1.10.0:
   version "1.10.0"
   resolved "http://npm-registry.qunhequnhe.com/immer/download/immer-1.10.0.tgz#bad67605ba9c810275d91e1c2a47d4582e98286d"
   integrity sha1-utZ2BbqcgQJ12R4cKkfUWC6YKG0=
+
+immer@^7.0.14:
+  version "7.0.14"
+  resolved "https://registry.npm.taobao.org/immer/download/immer-7.0.14.tgz#3e605f8584b15a9520d2f2f3fda9441cc9170d25"
+  integrity sha1-PmBfhYSxWpUg0vLz/alEHMkXDSU=
 
 import-cwd@^2.0.0:
   version "2.1.0"
