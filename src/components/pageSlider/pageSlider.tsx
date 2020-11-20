@@ -1,4 +1,6 @@
 import React from 'react'
+import { useLocation, useHistory } from 'react-router-dom'
+
 import { Menu, MenuItem, SubMenu } from '@qunhe/muya-ui'
 import getSilderMenu from '../../config/sliderMenu'
 import { ISilderMenu } from '../../type/menu'
@@ -10,9 +12,13 @@ interface ISilderMenuGroupProps {
 
 function SilderMenuGroup(props: ISilderMenuGroupProps): React.ReactElement {
     const { menu } = props;
+    const history = useHistory();
+    const onItemSelect = () => {
+        history.push(menu.path);
+    }
     if(menu.routes && menu.routes.length) {
         return (
-            <SubMenu title={menu.menuName}>
+            <SubMenu title={menu.menuName} key={menu.path}>
                 {menu.routes.map((route,index) => {
                     return <SilderMenuGroup
                         key={index}
@@ -23,7 +29,10 @@ function SilderMenuGroup(props: ISilderMenuGroupProps): React.ReactElement {
         )
     } else {
         return (
-        <MenuItem>
+        <MenuItem
+            key={menu.path}
+            onItemSelect={onItemSelect}
+        >
             {menu.menuName}
         </MenuItem>
         )
@@ -31,8 +40,11 @@ function SilderMenuGroup(props: ISilderMenuGroupProps): React.ReactElement {
 }
 
 export default function PageSlider(): React.ReactElement {
+    const location = useLocation();
+    const defaultSelectedKeys = [location.pathname];
     return (
         <Menu
+            selectedKeys={defaultSelectedKeys}
             triggerSubMenuAction='click'
             mode="inline"
         >

@@ -9,7 +9,7 @@ import { ISilderMenu } from '../../type/menu';
 const routes = getSilderMenu()
 
 function RouteWithSubRoutes(route: ISilderMenu): React.ReactElement | null {
-    if(route.component) {
+    if(route.component && !route.routes) {
         return (
             <Route
                 path={route.path}
@@ -19,13 +19,17 @@ function RouteWithSubRoutes(route: ISilderMenu): React.ReactElement | null {
                 }}
             />
         )
+    } else if (route.routes){
+        return (
+            <SwitchRoute routes={route.routes}/>
+        )
     } else {
         return null
     }
 }
 
-
-export default function AppMain(): React.ReactElement {
+function SwitchRoute(props: {routes: ISilderMenu[]}): React.ReactElement {
+    const { routes } = props;
     return (
         <Switch>
             {
@@ -37,5 +41,11 @@ export default function AppMain(): React.ReactElement {
                 })
             }
         </Switch>
+    )
+}
+
+export default function AppMain(): React.ReactElement {
+    return (
+        <SwitchRoute routes={routes}/>
     )
 }
