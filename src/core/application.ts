@@ -2,10 +2,13 @@ import ReactDOM from 'react-dom';
 import React from 'react';
 import { Provider } from 'react-redux';
 import createSagaMiddleware from 'redux-saga'
+import reduxThunk from 'redux-thunk';
+
 import { Store } from 'redux'
 import { createStore, applyMiddleware } from 'redux'
 import '../assets/css/global.scss';
-import {rootReducer,rootSaga} from '../AXR'
+import rootReducer, { goodsSaga } from '../reducers';
+// import {rootReducer,rootSaga} from '../AXR'
 
 interface IApplicationOptions {
     component: React.ReactElement
@@ -35,10 +38,11 @@ class Application {
         this.store = createStore(
             rootReducer,
             applyMiddleware(
-                sagaMiddleware
+                sagaMiddleware,
+                reduxThunk
             )
         );
-        sagaMiddleware.run(rootSaga)
+        sagaMiddleware.run(goodsSaga)
     }
 
     init() {

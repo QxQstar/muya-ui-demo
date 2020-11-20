@@ -1,28 +1,35 @@
 import React from 'react'
 import { Spin } from '@qunhe/muya-ui';
 import { IStateShpeUser } from './../../reducers/user'
-import { IGoodsShape } from '../../reducers/goods'
-import AXR from '../../AXR'
+import { IGoodsShape, IFetchGoodsParam, IAction as GoodsAction, IGoods } from '../../reducers/goods'
 
 interface IProps {
     user: IStateShpeUser,
     goods: IGoodsShape,
+    fetchUser: (id: number) => any,
+    fetchGoodsAction: (param: IFetchGoodsParam) => GoodsAction,
+    modifyGoods: (param: IGoods[]) => GoodsAction
 }
 
 export default function Home(props: IProps): React.ReactElement {
     const callback = () => {
-        AXR.action.userAction.started.dispatch(455)
+        props.fetchUser(455);
     }
 
     const getGoods = () => {
-        AXR.action.fetchGoodsAction.started.dispatch({
+        props.fetchGoodsAction({
             page:1,
             date: new Date().getTime()
         })
+        // AXR.action.fetchGoodsAction.started.dispatch({
+        //     page:1,
+        //     date: new Date().getTime()
+        // })
     }
 
     const modifGoods = () => {
-        AXR.action.modifyGoodsAction.dispatch([{name: '苹果', price: '3'}])
+        props.modifyGoods([{name: '苹果', price: '3'}])
+        // AXR.action.modifyGoodsAction.dispatch([{name: '苹果', price: '3'}])
     }
 
     return (
