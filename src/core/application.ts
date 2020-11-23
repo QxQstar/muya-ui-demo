@@ -3,11 +3,11 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import createSagaMiddleware from 'redux-saga'
 import reduxThunk from 'redux-thunk';
-
 import { Store } from 'redux'
 import { createStore, applyMiddleware } from 'redux'
 import '../assets/css/global.scss';
 import rootReducer, { goodsSaga } from '../reducers';
+import loggerMiddleware from '../reduxMiddleware/loggerMiddleware';
 // import {rootReducer,rootSaga} from '../AXR'
 
 interface IApplicationOptions {
@@ -35,11 +35,13 @@ class Application {
 
     private initStore() {
         const sagaMiddleware = createSagaMiddleware()
+        // this.store = store;
         this.store = createStore(
             rootReducer,
             applyMiddleware(
                 sagaMiddleware,
-                reduxThunk
+                reduxThunk,
+                loggerMiddleware
             )
         );
         sagaMiddleware.run(goodsSaga)

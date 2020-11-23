@@ -6,6 +6,7 @@
     "@loadable/component": "^5.13.2",
     "@qunhe/muya-theme-light": "^0.3.20",
     "@qunhe/muya-ui": "^0.4.29",
+    "@reduxjs/toolkit": "^1.4.0",
     "@types/react": "^16.9.49",
     "@types/react-dom": "^16.9.8",
     "@types/react-redux": "^7.1.9",

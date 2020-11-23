@@ -56,7 +56,6 @@ export default function goods(state = {}, action: IAction) {
 }
 
 function* fetchGoods(action: IAction) {
-    console.log(action)
     function getGoods() {
         return new Promise(res => {
             setTimeout(() => {
