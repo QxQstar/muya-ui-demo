@@ -1,0 +1,9 @@
+{
+    "compilerOptions": {
+      "baseUrl": ".",
+      "paths": {
+        "math": ["packages/math"],
+        "request": ["packages/request"]
+      }
+    }
+  }

@@ -1481,6 +1481,16 @@
   resolved "https://registry.npm.taobao.org/@redux-saga/types/download/@redux-saga/types-1.1.0.tgz#0e81ce56b4883b4b2a3001ebe1ab298b84237204"
   integrity sha1-DoHOVrSIO0sqMAHr4aspi4QjcgQ=
 
+"@reduxjs/toolkit@^1.4.0":
+  version "1.5.0"
+  resolved "http://npm-registry.qunhequnhe.com/@reduxjs/toolkit/download/@reduxjs/toolkit-1.5.0.tgz#1025c1ccb224d1fc06d8d98a61f6717d57e6d477"
+  integrity sha1-ECXBzLIk0fwG2NmKYfZxfVfm1Hc=
+  dependencies:
+    immer "^8.0.0"
+    redux "^4.0.0"
+    redux-thunk "^2.3.0"
+    reselect "^4.0.0"
+
 "@rooks/use-mutation-observer@3.4.0":
   version "3.4.0"
   resolved "http://npm-registry.qunhequnhe.com/@rooks/use-mutation-observer/download/@rooks/use-mutation-observer-3.4.0.tgz#5e4c122401ae1f790a24c64763a2910d0199a909"
@@ -2420,6 +2430,13 @@ aws4@^1.8.0:
   version "1.10.1"
   resolved "http://npm-registry.qunhequnhe.com/aws4/download/aws4-1.10.1.tgz#e1e82e4f3e999e2cfd61b161280d16a111f86428"
   integrity sha1-4eguTz6Zniz9YbFhKA0WoRH4ZCg=
+
+axios@0.20.0:
+  version "0.20.0"
+  resolved "http://npm-registry.qunhequnhe.com/axios/download/axios-0.20.0.tgz#057ba30f04884694993a8cd07fa394cff11c50bd"
+  integrity sha1-BXujDwSIRpSZOozQf6OUz/EcUL0=
+  dependencies:
+    follow-redirects "^1.10.0"
 
 axobject-query@^2.0.2:
   version "2.2.0"
@@ -4975,7 +4992,7 @@ focus-outline-manager@^1.0.2:
   resolved "http://npm-registry.qunhequnhe.com/focus-outline-manager/download/focus-outline-manager-1.0.2.tgz#7bf3658865341fb6b08d042a037b9d2868b119b5"
   integrity sha1-e/NliGU0H7awjQQqA3udKGixGbU=
 
-follow-redirects@^1.0.0:
+follow-redirects@^1.0.0, follow-redirects@^1.10.0:
   version "1.13.0"
   resolved "http://npm-registry.qunhequnhe.com/follow-redirects/download/follow-redirects-1.13.0.tgz#b42e8d93a2a7eea5ed88633676d6597bc8e384db"
   integrity sha1-tC6Nk6Kn7qXtiGM2dtZZe8jjhNs=
@@ -5660,6 +5677,11 @@ immer@^7.0.14:
   version "7.0.14"
   resolved "https://registry.npm.taobao.org/immer/download/immer-7.0.14.tgz#3e605f8584b15a9520d2f2f3fda9441cc9170d25"
   integrity sha1-PmBfhYSxWpUg0vLz/alEHMkXDSU=
+
+immer@^8.0.0:
+  version "8.0.0"
+  resolved "http://npm-registry.qunhequnhe.com/immer/download/immer-8.0.0.tgz#08763549ba9dd7d5e2eb4bec504a8315bd9440c2"
+  integrity sha1-CHY1Sbqd19Xi60vsUEqDFb2UQMI=
 
 import-cwd@^2.0.0:
   version "2.1.0"
@@ -9153,6 +9175,18 @@ react-app-polyfill@^1.0.6:
     regenerator-runtime "^0.13.3"
     whatwg-fetch "^3.0.0"
 
+react-app-rewire-alias@^0.1.8:
+  version "0.1.8"
+  resolved "http://npm-registry.qunhequnhe.com/react-app-rewire-alias/download/react-app-rewire-alias-0.1.8.tgz#09ea06a1cc9c174742a871f85ff1df35bbeadb85"
+  integrity sha1-CeoGocycF0dCqHH4X/HfNbvq24U=
+
+react-app-rewired@^2.1.7:
+  version "2.1.7"
+  resolved "http://npm-registry.qunhequnhe.com/react-app-rewired/download/react-app-rewired-2.1.7.tgz#b229d32b93b076059e62b06e8117109b92599e18"
+  integrity sha1-sinTK5OwdgWeYrBugRcQm5JZnhg=
+  dependencies:
+    semver "^5.6.0"
+
 react-clientside-effect@^1.2.2:
   version "1.2.2"
   resolved "http://npm-registry.qunhequnhe.com/react-clientside-effect/download/react-clientside-effect-1.2.2.tgz#6212fb0e07b204e714581dd51992603d1accc837"
@@ -9674,6 +9708,11 @@ requires-port@^1.0.0:
   version "1.0.0"
   resolved "http://npm-registry.qunhequnhe.com/requires-port/download/requires-port-1.0.0.tgz#925d2601d39ac485e091cf0da5c6e694dc3dcaff"
   integrity sha1-kl0mAdOaxIXgkc8NpcbmlNw9yv8=
+
+reselect@^4.0.0:
+  version "4.0.0"
+  resolved "http://npm-registry.qunhequnhe.com/reselect/download/reselect-4.0.0.tgz#f2529830e5d3d0e021408b246a206ef4ea4437f7"
+  integrity sha1-8lKYMOXT0OAhQIskaiBu9OpEN/c=
 
 resize-observer-polyfill@^1.5.1:
   version "1.5.1"

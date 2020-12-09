@@ -1,0 +1,8 @@
+{
+  "name": "mach",
+  "version": "1.0.0",
+  "description": "数学库",
+  "main": "index.js",
+  "author": "heyu",
+  "license": "MIT"
+}

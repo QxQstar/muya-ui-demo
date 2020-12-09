@@ -1,0 +1,10 @@
+{
+  "name": "request",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "heyu",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "0.20.0"
+  }
+}
