@@ -5,7 +5,12 @@ export enum Theme {
     Dark
 }
 
-export default React.createContext({
+export interface IThemeContext {
+    theme: Theme;
+    toggleTheme: (theme: Theme) => void
+}
+
+export default React.createContext<IThemeContext>({
     theme: Theme.Light,
     toggleTheme: (theme: Theme) => {}
 })

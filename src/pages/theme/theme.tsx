@@ -1,9 +1,21 @@
 import React from 'react'
-import { add } from 'math'
 
-export default function Theme() {
-    console.log(add(1,3))
-    return (
-        <div>当前主题</div>
-    )
+import ThemeContext, { IThemeContext } from '../../context/themeContext';
+
+
+
+export default class Theme extends React.Component<{},{}, IThemeContext>{
+    static contextType = ThemeContext
+    context: IThemeContext;
+
+    constructor(props: {}, context: IThemeContext) {
+        super(props)
+        this.context = context
+    }
+
+    render() {
+        return (<div>
+            {this.context.theme}
+            </div>)
+    }
 }
