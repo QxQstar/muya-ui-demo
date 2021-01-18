@@ -2,11 +2,9 @@ import React from 'react'
 
 import ThemeContext, { IThemeContext } from '../../context/themeContext';
 
-
-
-export default class Theme extends React.Component<{},{}, IThemeContext>{
+export default class Theme extends React.Component<{}>{
     static contextType = ThemeContext
-    context: IThemeContext;
+    context: IThemeContext
 
     constructor(props: {}, context: IThemeContext) {
         super(props)

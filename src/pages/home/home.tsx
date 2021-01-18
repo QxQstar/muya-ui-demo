@@ -32,7 +32,6 @@ export default function Home(props: IProps): React.ReactElement {
         props.modifyGoods([{name: '苹果', price: '3'}])
         // AXR.action.modifyGoodsAction.dispatch([{name: '苹果', price: '3'}])
     }
-    console.log('home render')
     return (
       
         <div>
