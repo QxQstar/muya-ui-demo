@@ -1,6 +1,7 @@
 import { Home } from "../pages/home";
 import { Theme } from "../pages/theme";
 import { Background } from '../pages/background';
+import { Hierarchy } from '../pages/hierarchy'
 import { ISilderMenu } from '../type/menu';
 
 export default function (): ISilderMenu[] {
@@ -24,6 +25,11 @@ export default function (): ISilderMenu[] {
                     path: '/basic/component/background',
                     menuName: '背景',
                     component: Background
+                },
+                {
+                    path: '/basic/component/hierarchy',
+                    menuName: 'canvas hierarchy',
+                    component: Hierarchy
                 }
             ]
         }
