@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1"
+     baseProfile="full"
+     width="800" height="800">
+     <rect x="0" y="0" width="790" height="790" fill="transparent" stroke="black" stroke-width="5" rx="10" ry="10"></rect>
+     <text font-size="20" fill="#333" x="15" y="25">rect</text>
+     <rect x="10" y="40" width="50" height="50" fill="#999"></rect>
+     <rect x="70" y="40" width="30" height="30" fill="red" rx="30" ry="30"></rect>
+     <rect x="110" y="40" width="40" height="20" fill="transparent" stroke="black" stroke-width="5"></rect>
+    <line x1="10" y1="103" x2="200" y2="103" stroke="red"></line>
+
+      <text font-size="20" fill="#333" x="15" y="135">circle</text>
+      <circle r="30" cx="45" cy="175" fill="#459"></circle>
+      <line x1="10" y1="215" x2="200" y2="215" stroke="red"></line>
+
+      <text font-size="20" fill="#333" x="15" y="235">ellipse</text>
+      <ellipse rx="50" ry="30" cx="60" cy="275" fill="#980"></ellipse>
+      <line x1="10" y1="315" x2="200" y2="315" stroke="red"></line>
+
+      <text font-size="20" fill="#333" x="15" y="345">polyline</text>
+      <polyline points="10 445, 40 365, 70 435, 100 405, 130 465" stroke="#980" fill="transparent"></polyline>
+
+      <text font-size="20" fill="#333" x="15" y="485">polygon</text>
+      <polygon points="10 595, 40 495, 70 565, 100 535, 130 595" fill="#E80"></polygon>
+      <polygon points="10 595, 40 525, 70 585, 100 545, 130 595" fill="F56"></polygon>
+    <!-- 矩型 -->
+      <path d="M 300 10 H 600 V 40 H 300 Z" fill="#7a8"/>
+
+      <path d="M 300 50 h 300 v 30 h -300 Z" fill="#8e8"/>
+    <!-- 三次贝赛儿曲线  -->
+      <path d="M 300 90 C 385 300, 375 430, 468 90" stroke="#8e8" fill="transparent"/>
+      <path d="M 300 90 S 385 200, 468 90" stroke="#118" fill="transparent"/>
+
+      <!-- 二次贝赛儿曲线 -->
+      <path d="M 300 180 Q 385 300, 468 180 T 768 280" stroke="red" fill="transparent"/>
+
+      <path d="M400 400
+           A 45 45, 0, 0, 1, 445 355
+           L 445 400 Z" fill="green"/>
+
+    <!-- 饼图 -->
+
+    <circle r="150" cx="600" cy="550" fill="#ebebeb"></circle>
+    <path
+        d="M 600 400
+        A 150 150, 0, 0, 1, 750 550
+        L 600 550 Z"
+        fill="#987"
+    />
+    <path
+        d="M 750 550
+        A 150 150, 0, 0, 1, 450 550
+        L 600 550 Z"
+        fill="#e87"
+    />
+
+</svg>
