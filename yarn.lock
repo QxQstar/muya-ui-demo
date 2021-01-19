@@ -1637,6 +1637,11 @@
   resolved "http://npm-registry.qunhequnhe.com/@types/color-name/download/@types/color-name-1.1.1.tgz#1c1261bbeaa10a8055bbc5d8ab84b7b2afc846a0"
   integrity sha1-HBJhu+qhCoBVu8XYq4S3sq/IRqA=
 
+"@types/d3-hierarchy@^2.0.0":
+  version "2.0.0"
+  resolved "http://npm-registry.qunhequnhe.com/@types/d3-hierarchy/download/@types/d3-hierarchy-2.0.0.tgz#92079d9dbcec1dfe2736fb050a8bf916e5850a1c"
+  integrity sha1-kgednbzsHf4nNvsFCov5FuWFChw=
+
 "@types/eslint-visitor-keys@^1.0.0":
   version "1.0.0"
   resolved "http://npm-registry.qunhequnhe.com/@types/eslint-visitor-keys/download/@types/eslint-visitor-keys-1.0.0.tgz#1ee30d79544ca84d68d4b3cdb0af4f205663dd2d"
@@ -3825,6 +3830,11 @@ cyclist@^1.0.1:
   version "1.0.1"
   resolved "http://npm-registry.qunhequnhe.com/cyclist/download/cyclist-1.0.1.tgz#596e9698fd0c80e12038c2b82d6eb1b35b6224d9"
   integrity sha1-WW6WmP0MgOEgOMK4LW6xs1tiJNk=
+
+d3-hierarchy@^2.0.0:
+  version "2.0.0"
+  resolved "http://npm-registry.qunhequnhe.com/d3-hierarchy/download/d3-hierarchy-2.0.0.tgz#dab88a58ca3e7a1bc6cab390e89667fcc6d20218"
+  integrity sha1-2riKWMo+ehvGyrOQ6JZn/MbSAhg=
 
 d@1, d@^1.0.1:
   version "1.0.1"
