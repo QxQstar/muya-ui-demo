@@ -130,6 +130,35 @@ function linearGradient(ctx: CanvasRenderingContext2D) {
   requestAnimationFrame(() => linearGradient(ctx))
 }
 
+function radialGradient(ctx: CanvasRenderingContext2D) {
+  // 创建渐变
+  var radgrad = ctx.createRadialGradient(30,30,1,45,45,30);
+  radgrad.addColorStop(0, 'red');
+  radgrad.addColorStop(0.9, '#019F62');
+  radgrad.addColorStop(1, 'rgba(12,34,56,0)');
+
+  ctx.fillStyle = radgrad;
+  ctx.fillRect(0,0,150,150);
+}
+
+function drawImg(ctx: CanvasRenderingContext2D) {
+  const image = new Image(60, 45); // Using optional size for image
+image.onload = function() {
+
+  // Will draw the image as 300x227, ignoring the custom size of 60x45
+  // given in the constructor
+  ctx.drawImage(image, 10, 200);
+
+  // To use the custom size we'll have to specify the scale parameters
+  // using the element's width and height properties - lets draw one
+  // on top in the corner:
+  ctx.drawImage(image, 10, 200, image.width, image.height);
+}; // Draw when image has loaded
+
+// Load an image of intrinsic size 300x227 in CSS pixels
+image.src = 'https://mdn.mozillademos.org/files/5397/rhino.jpg';
+}
+
 export function draw(canvas: HTMLCanvasElement) {
 
     const context = canvas.getContext('2d')!;
@@ -140,4 +169,6 @@ export function draw(canvas: HTMLCanvasElement) {
     drawSmall(context)
     drawGroup(context);
     linearGradient(context)
+    radialGradient(context)
+    drawImg(context)
 }
