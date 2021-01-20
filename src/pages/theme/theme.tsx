@@ -14,7 +14,7 @@ export default class Theme extends React.Component<{}>{
 
     render() {
         return (<div>
-            <img src={ract} />
+            <img src={ract} alt='svg'/>
             {this.context.theme}
             </div>)
     }

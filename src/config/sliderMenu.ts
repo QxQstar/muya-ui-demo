@@ -3,6 +3,7 @@ import { Theme } from "../pages/theme";
 import { Background } from '../pages/background';
 import { Hierarchy } from '../pages/hierarchy'
 import { ISilderMenu } from '../type/menu';
+import { CanvasLearn } from '../pages/canvas'
 
 export default function (): ISilderMenu[] {
     return [
@@ -30,6 +31,11 @@ export default function (): ISilderMenu[] {
                     path: '/basic/component/hierarchy',
                     menuName: 'canvas hierarchy',
                     component: Hierarchy
+                }, 
+                {
+                    path: '/basic/component/canvas',
+                    menuName: 'CanvasLearn',
+                    component: CanvasLearn
                 }
             ]
         }

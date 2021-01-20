@@ -30,8 +30,6 @@ function getColor(depth: number) {
 export async function startDraw(canvas: HTMLCanvasElement) {
     const root = await dealData()
 
-    console.log(root)
-
     const context = canvas.getContext('2d')!
 
     function draw(data: any) {
@@ -47,7 +45,6 @@ export async function startDraw(canvas: HTMLCanvasElement) {
             context.fillStyle = '#fff'
             context.font = '8px serif';
             context.textAlign = 'center';
-            const text = context.measureText(data.data.name)
             context.fillText(data.data.name, data.x, data.y + 3);
         }
     }
