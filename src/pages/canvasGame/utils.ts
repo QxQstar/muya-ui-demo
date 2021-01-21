@@ -13,7 +13,7 @@ interface IBlock {
 
 interface IData {
     line: ILine[],
-    block: IBlock[]
+    blocks: IBlock[]
 }
 
 enum GameStatus {
@@ -51,26 +51,28 @@ export default class CanvasGame {
     }
 
     createData() {
+
+        // 线条与方块之间有 10 像素的间隙
         const createLineData = (): ILine[] => {
             const line: ILine[] = []
             const arr = [0,1,2,3,4]
             // 创建纵向的线
             arr.map(item => {
                 line.push({
-                    x1: 70 * item,
+                    x1: (20 + CanvasGame.blockW) * item,
                     y1: 0,
-                    x2: 70 * item,
-                    y2: 4 * 70
+                    x2: (20 + CanvasGame.blockW) * item,
+                    y2: 4 * (20 + CanvasGame.bloxkH)
                 })
             })
 
             // 创建横向的线
             arr.map(item => {
                 line.push({
-                    x2: 4 * 70,
-                    y2: item * 70,
+                    x2: 4 * (20 + CanvasGame.blockW),
+                    y2: item * (20 + CanvasGame.bloxkH),
                     x1: 0,
-                    y1: item * 70
+                    y1: item * (20 + CanvasGame.bloxkH)
                 })
             })
 
@@ -94,11 +96,11 @@ export default class CanvasGame {
 
         return {
             line: createLineData(),
-            block: createBlockData()
+            blocks: createBlockData()
         }
     }
 
-    drawLine() {
+    drawLines() {
         const { line } = this.data;
         this.ctx.beginPath()
         this.ctx.strokeStyle = '#789'
@@ -120,9 +122,9 @@ export default class CanvasGame {
     }
 
     createBlockFont() {
-        const { block } = this.data;
+        const { blocks } = this.data;
 
-        block.forEach(item => {
+        blocks.forEach(item => {
             item.font = Math.floor(Math.random() * 4) + ''
         })
 
@@ -156,10 +158,10 @@ export default class CanvasGame {
     }
 
 
-    drawBlock() {
-        const { block } = this.data;
+    drawBlocks() {
+        const { blocks } = this.data;
 
-        block.forEach((item) => {
+        blocks.forEach((item) => {
             this.ctx.beginPath()
             this.ctx.clearRect(item.x - 1 , item.y - 1, CanvasGame.blockW + 2, CanvasGame.bloxkH + 2)
             this.ctx.fillStyle = this.lineGrad(item.x, item.y, this.blockColor[ Math.floor(Math.random() * 16) ])
@@ -238,8 +240,8 @@ export default class CanvasGame {
     }
 
     draw() {
-        this.drawLine();
-        this.drawBlock();
+        this.drawLines();
+        this.drawBlocks();
         this.drawFont();
         this.drawProgress();
         this.drawGameResult();
@@ -249,20 +251,23 @@ export default class CanvasGame {
         this.mouseX = x;
         this.mouseY = y;
 
-        const { block } = this.data;
+        const { blocks } = this.data;
 
-        block.forEach(item => {
+        blocks.forEach(item => {
             this.drawBlockBorder(item)
         })
     }
 
     hintBlock(x: number,y: number) {
-        const { block } = this.data;
+        this.mouseX = x;
+        this.mouseY = y;
+
+        const { blocks } = this.data;
         let hintedBlock
 
-        for(let i = 0 ; i < block.length ; i++) {
-            if (this.blockIfHover(block[i])) {
-                hintedBlock = block[i];
+        for(let i = 0 ; i < blocks.length ; i++) {
+            if (this.blockIfHover(blocks[i])) {
+                hintedBlock = blocks[i];
                 break;
             }
         }
