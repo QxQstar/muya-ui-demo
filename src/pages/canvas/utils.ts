@@ -105,7 +105,7 @@ function drawGroup(ctx: CanvasRenderingContext2D) {
   }
 }
 
-let startW = 10
+let startW = 300
 
 function linearGradient(ctx: CanvasRenderingContext2D) {
   ctx.clearRect(600,20,320,20)
@@ -127,7 +127,7 @@ function linearGradient(ctx: CanvasRenderingContext2D) {
     startW += 10
   }
 
-  requestAnimationFrame(() => linearGradient(ctx))
+  // requestAnimationFrame(() => linearGradient(ctx))
 }
 
 function radialGradient(ctx: CanvasRenderingContext2D) {
@@ -159,6 +159,63 @@ image.onload = function() {
 image.src = 'https://mdn.mozillademos.org/files/5397/rhino.jpg';
 }
 
+
+function drawArcRing(ctx: CanvasRenderingContext2D) {
+  ctx.save();
+
+  ctx.translate(450,300)
+  for (let i = 1; i < 6; i++) {
+    ctx.save();
+    ctx.fillStyle = 'rgb('+(51*i)+','+(255-51*i)+',255)';
+    for (let j = 0; j < 6 * i; j++) {
+      ctx.beginPath()
+      ctx.rotate(Math.PI * 2 / (6 * i))
+      ctx.arc(i * 15 ,0,5,0,Math.PI*2)
+      ctx.fill()
+    }
+    ctx.restore()
+  }
+  
+  ctx.restore()
+}
+
+function drawScale(ctx: CanvasRenderingContext2D) {
+  ctx.save();
+
+  ctx.beginPath()
+  ctx.fillStyle = 'red'
+  ctx.font = "bold 28px serif";
+  ctx.scale(1,-1)
+  ctx.fillText('你',610,-100)
+
+  ctx.restore()
+}
+
+function drawStar(ctx: CanvasRenderingContext2D) {
+  ctx.save()
+
+  ctx.translate(400, 200)
+  ctx.beginPath();
+
+  ctx.fillStyle = 'red'
+  const r1 = 30 / 2;
+  const r2 = r1 / 2;
+  var x1,x2,y1,y2;
+  for (var i = 0; i < 5; i++) {
+    x1 = r1 * Math.cos((54 + i*72)/180*Math.PI);
+    y1 = r1 * Math.sin((54 + i*72)/180*Math.PI);
+    x2 = r2 * Math.cos((18 + i*72)/180*Math.PI);
+    y2 = r2 * Math.sin((18 + i*72)/180*Math.PI);
+  
+    ctx.lineTo(x2, y2);
+    ctx.lineTo(x1, y1);
+  }
+
+  ctx.closePath();
+  ctx.fill();
+  ctx.restore()
+}
+
 export function draw(canvas: HTMLCanvasElement) {
 
     const context = canvas.getContext('2d')!;
@@ -171,4 +228,7 @@ export function draw(canvas: HTMLCanvasElement) {
     linearGradient(context)
     radialGradient(context)
     drawImg(context)
+    drawArcRing(context)
+    drawScale(context)
+    drawStar(context);
 }
