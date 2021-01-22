@@ -4,7 +4,8 @@ import { Background } from '../pages/background';
 import { Hierarchy } from '../pages/hierarchy'
 import { ISilderMenu } from '../type/menu';
 import { CanvasLearn } from '../pages/canvas';
-import  { CanvasGame } from '../pages/canvasGame'
+import  { CanvasGame } from '../pages/canvasGame';
+import { Sky } from '../pages/starSky'
 
 export default function (): ISilderMenu[] {
     return [
@@ -42,6 +43,11 @@ export default function (): ISilderMenu[] {
                     path: '/basic/component/canvasGame',
                     menuName: 'CanvasGame',
                     component: CanvasGame
+                },
+                {
+                    path: '/basic/component/starSky',
+                    menuName: 'starSky',
+                    component: Sky
                 }
             ]
         }
