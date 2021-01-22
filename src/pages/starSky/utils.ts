@@ -12,13 +12,14 @@ export default class StarSky {
     private context: CanvasRenderingContext2D
 
     private starsData: IStarData[]
+    private cameraR: number = 40
 
     constructor(canvas: HTMLCanvasElement,) {
         this.canvas = canvas
         this.context = canvas.getContext('2d')!
         
         this.starsData = this.createStarsData()
-        this.draw()
+        this.brawBackground();
     }
 
     createStarsData(): IStarData[] {
@@ -43,7 +44,7 @@ export default class StarSky {
         return result
     }
 
-    brawBackground() {
+    drawSky() {
         this.context.beginPath();
 
         const grand = this.context.createLinearGradient(0,0,0,this.canvas.height)
@@ -53,7 +54,16 @@ export default class StarSky {
         this.context.fillStyle = grand;
 
         this.context.fillRect(0,0,this.canvas.width,this.canvas.height)
-        this.drawStars(0.3);
+    }
+
+    brawBackground() {
+        this.context.save();
+
+        this.context.globalAlpha = 0.4
+        this.drawSky();
+        this.drawStars();
+
+        this.context.restore()
     }
 
     drawStar(r: number) {
@@ -78,10 +88,7 @@ export default class StarSky {
         this.context.fill();
     }
 
-    drawStars(globalAlpha: number = 1) {
-        this.context.save();
-        
-        this.context.globalAlpha = globalAlpha
+    drawStars() {
         this.starsData.forEach((item) => {
             this.context.save();
             this.context.translate(item.translateX, item.translateY)
@@ -89,24 +96,29 @@ export default class StarSky {
             this.drawStar(item.r);
             this.context.restore();
         })
+    }
+
+    clip(x: number = 150,y: number = 150) {
+        this.context.save()
+
+        this.context.beginPath()
+        this.context.arc(x,y,this.cameraR,0,2*Math.PI)
+        this.context.clip()
+
+        this.drawSky()
+        this.drawStars()
 
         this.context.restore()
     }
 
-    clip(x: number = 150,y: number = 150) {
-        this.context.beginPath();
-        this.context.arc(x,y,50,0,2*Math.PI)
-        this.context.clip()
-    }
-
     move(x: number,y: number) {
         this.context.clearRect(0,0,this.canvas.width,this.canvas.height)
-        this.context.fillRect(0,0,this.canvas.width,this.canvas.height);
-        this.clip(x,y);
-        this.draw()
-    }
-    
-    draw() {
-        this.brawBackground();
+        if (x < this.cameraR/2 || y < this.cameraR/2 || x > this.canvas.width - this.cameraR/2 || y > this.canvas.height - this.cameraR/2) {
+            this.brawBackground();
+        } else {
+            this.brawBackground();
+            this.clip(x,y);
+        }
+        
     }
 }

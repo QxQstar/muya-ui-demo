@@ -17,7 +17,7 @@ export default function Sky() {
         const target: HTMLCanvasElement = event.target as HTMLCanvasElement
         const boundingClientRect = target.getBoundingClientRect();
     
-        // sky!.move(event.clientX - boundingClientRect.x, event.clientY - boundingClientRect.y)
+        sky!.move(event.clientX - boundingClientRect.x, event.clientY - boundingClientRect.y)
     }
 
     return (
