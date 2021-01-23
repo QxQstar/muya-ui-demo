@@ -22,7 +22,7 @@ export default function Sky() {
 
     return (
         <div>
-            <canvas width="800" height="600" onMouseMove={mouseMove}></canvas>
+            <canvas width="1150" height="600" onMouseMove={mouseMove}></canvas>
         </div>
     )
 }

@@ -19,7 +19,7 @@
       <text font-size="20" fill="#333" x="15" y="345">polyline</text>
       <polyline points="10 445, 40 365, 70 435, 100 405, 130 465" stroke="#980" fill="transparent"></polyline>
 
-      <text font-size="20" fill="#333" x="15" y="485">polygon</text>
+      <text font-size="20" fill="#333" x="15" y="485" >polygon</text>
       <polygon points="10 595, 40 495, 70 565, 100 535, 130 595" fill="#E80"></polygon>
       <polygon points="10 595, 40 525, 70 585, 100 545, 130 595" fill="F56"></polygon>
     <!-- 矩型 -->

@@ -6,6 +6,7 @@ import { ISilderMenu } from '../type/menu';
 import { CanvasLearn } from '../pages/canvas';
 import  { CanvasGame } from '../pages/canvasGame';
 import { Sky } from '../pages/starSky'
+import { SvgLearn } from '../pages/svg';
 
 export default function (): ISilderMenu[] {
     return [
@@ -48,6 +49,11 @@ export default function (): ISilderMenu[] {
                     path: '/basic/component/starSky',
                     menuName: 'starSky',
                     component: Sky
+                },
+                {
+                    path: '/basic/component/SvgLearn',
+                    menuName: 'SvgLearn',
+                    component: SvgLearn
                 }
             ]
         }
