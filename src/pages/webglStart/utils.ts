@@ -49,9 +49,13 @@ export default function draw(canvas: HTMLCanvasElement) {
 
     // 定义三角形顶点坐标
     const points = new Float32Array([
-        -1, -1,
-        0, 1,
-        1, -1,
+        1.0,  1.0,
+        0.0,0.0,
+        -1.0,  1.0,
+
+        -1.0, -1.0,
+        1.0, -1.0,
+        0.0,0.0
     ]);
 
     // 创建缓冲对象，将顶点写入缓冲对象中
@@ -65,7 +69,8 @@ export default function draw(canvas: HTMLCanvasElement) {
     gl.vertexAttribPointer(vPosition,2, gl.FLOAT,false,0,0)
     gl.enableVertexAttribArray(vPosition);
 
-    // 执行绘制指令
+    // 清空绘图区域
+    gl.clearColor(0,0,0,1)
     gl.clear(gl.COLOR_BUFFER_BIT)
     
     // 绘制实心三角型

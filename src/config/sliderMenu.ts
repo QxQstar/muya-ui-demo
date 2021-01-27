@@ -8,6 +8,7 @@ import  { CanvasGame } from '../pages/canvasGame';
 import { Sky } from '../pages/starSky'
 import { SvgLearn } from '../pages/svg';
 import { WebglStart } from '../pages/webglStart';
+import { WebGLPoint } from '../pages/webglPoint';
 
 export default function (): ISilderMenu[] {
     return [
@@ -60,6 +61,11 @@ export default function (): ISilderMenu[] {
                     path: '/basic/component/WebglStart',
                     menuName: 'WebGL 三角形',
                     component: WebglStart
+                },
+                {
+                    path: '/basic/component/WebGLPoint',
+                    menuName: 'WebGL 点',
+                    component: WebGLPoint
                 }
             ]
         }
