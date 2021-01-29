@@ -99,6 +99,7 @@ export default class DrawPoint {
 
     clearPoints() {
         this.points = []
+        this.pointColors = []
         this.clear();
     }
 }
