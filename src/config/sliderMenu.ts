@@ -9,6 +9,7 @@ import { Sky } from '../pages/starSky'
 import { SvgLearn } from '../pages/svg';
 import { WebglStart } from '../pages/webglStart';
 import { WebGLPoint } from '../pages/webglPoint';
+import { WebglClickPoints } from '../pages/webglClickPoints';
 
 export default function (): ISilderMenu[] {
     return [
@@ -66,6 +67,11 @@ export default function (): ISilderMenu[] {
                     path: '/basic/component/WebGLPoint',
                     menuName: 'WebGL 点',
                     component: WebGLPoint
+                },
+                {
+                    path: '/basic/component/WebglClickPoints',
+                    menuName: '鼠标点击画点',
+                    component: WebglClickPoints
                 }
             ]
         }
