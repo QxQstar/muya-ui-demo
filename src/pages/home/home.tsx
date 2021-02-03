@@ -2,7 +2,6 @@ import React from 'react'
 import { Spin } from '@qunhe/muya-ui';
 import { IStateShpeUser } from './../../reducers/user'
 import { IGoodsShape, IFetchGoodsParam, IAction as GoodsAction, IGoods } from '../../reducers/goods'
-import { Background }  from '../../pages/background';
 
 interface IProps {
     user: IStateShpeUser,
@@ -46,8 +45,6 @@ export default function Home(props: IProps): React.ReactElement {
                 <button onClick={getGoods}>getGoods</button>
                 <button onClick={modifGoods}>modify goods</button>
             </div>
-
-            <Background/>
         </div>
     )
 }

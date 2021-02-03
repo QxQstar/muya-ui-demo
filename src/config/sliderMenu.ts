@@ -10,6 +10,7 @@ import { SvgLearn } from '../pages/svg';
 import { WebglStart } from '../pages/webglStart';
 import { WebGLPoint } from '../pages/webglPoint';
 import { WebglClickPoints } from '../pages/webglClickPoints';
+import { State }  from '../pages/state';
 
 export default function (): ISilderMenu[] {
     return [
@@ -23,6 +24,11 @@ export default function (): ISilderMenu[] {
             path: '/theme',
             menuName: '主题',
             component: Theme
+        },
+        {
+            path: '/state',
+            menuName: 'state',
+            component: State
         },
         {
             path: '/basic/component',
