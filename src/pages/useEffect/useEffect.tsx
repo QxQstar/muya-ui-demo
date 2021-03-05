@@ -12,6 +12,9 @@ export default function LearnEffect() {
     
     const changeName = () => {
         setName(name + 'e')
+        setName((s) => {
+            return + s + 'e'
+        })
     }
     return (
         <div>

@@ -17,6 +17,7 @@ import { LearnReducer } from '../pages/useReducer'
 import { LearnRef } from '../pages/useRef'
 import { MergeState } from '../pages/mergeState'
 import { ConputedW } from '../pages/conputedW'
+import { CanvasTree } from '../pages/canvasTree'
 
 export default function (): ISilderMenu[] {
     return [
@@ -44,46 +45,6 @@ export default function (): ISilderMenu[] {
                     path: '/basic/component/background',
                     menuName: '背景',
                     component: Background
-                },
-                {
-                    path: '/basic/component/hierarchy',
-                    menuName: 'canvas hierarchy',
-                    component: Hierarchy
-                }, 
-                {
-                    path: '/basic/component/canvas',
-                    menuName: 'CanvasLearn',
-                    component: CanvasLearn
-                },
-                {
-                    path: '/basic/component/canvasGame',
-                    menuName: 'CanvasGame',
-                    component: CanvasGame
-                },
-                {
-                    path: '/basic/component/starSky',
-                    menuName: 'starSky',
-                    component: Sky
-                },
-                {
-                    path: '/basic/component/SvgLearn',
-                    menuName: 'SvgLearn',
-                    component: SvgLearn
-                },
-                {
-                    path: '/basic/component/WebglStart',
-                    menuName: 'WebGL 三角形',
-                    component: WebglStart
-                },
-                {
-                    path: '/basic/component/WebGLPoint',
-                    menuName: 'WebGL 点',
-                    component: WebGLPoint
-                },
-                {
-                    path: '/basic/component/WebglClickPoints',
-                    menuName: '鼠标点击画点',
-                    component: WebglClickPoints
                 },
                 {
                     path: '/basic/component/useEffect',
@@ -115,6 +76,63 @@ export default function (): ISilderMenu[] {
                     menuName: 'ConputedW',
                     component: ConputedW
                 }
+            ]
+        },
+        {
+            path: '/basic/canvas',
+            menuName: 'canvas',
+            routes: [
+                {
+                    path: '/basic/canvas/hierarchy',
+                    menuName: 'canvas hierarchy',
+                    component: Hierarchy
+                }, 
+                {
+                    path: '/basic/canvas/canvas',
+                    menuName: 'CanvasLearn',
+                    component: CanvasLearn
+                },
+                {
+                    path: '/basic/canvas/canvasGame',
+                    menuName: 'CanvasGame',
+                    component: CanvasGame
+                },
+                {
+                    path: '/basic/canvas/starSky',
+                    menuName: 'starSky',
+                    component: Sky
+                },
+                {
+                    path: '/basic/canvas/SvgLearn',
+                    menuName: 'SvgLearn',
+                    component: SvgLearn
+                },
+                {
+                    path: '/basic/canvas/canvasTree',
+                    menuName: 'canvasTree',
+                    component: CanvasTree
+                }
+            ]
+        },
+        {
+            path: '/basic/webgl',
+            menuName: 'webgl', 
+            routes: [
+                {
+                    path: '/basic/webgl/WebglStart',
+                    menuName: 'WebGL 三角形',
+                    component: WebglStart
+                },
+                {
+                    path: '/basic/webgl/WebGLPoint',
+                    menuName: 'WebGL 点',
+                    component: WebGLPoint
+                },
+                {
+                    path: '/basic/webgl/WebglClickPoints',
+                    menuName: '鼠标点击画点',
+                    component: WebglClickPoints
+                },
             ]
         }
     ];
