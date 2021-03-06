@@ -10826,6 +10826,11 @@ terser@^4.1.2, terser@^4.6.12, terser@^4.6.3:
     source-map "~0.6.1"
     source-map-support "~0.5.12"
 
+tess2@^1.0.0:
+  version "1.0.0"
+  resolved "http://npm-registry.qunhequnhe.com/tess2/download/tess2-1.0.0.tgz#2e2eb21822294061b83d46cbaefdd09d86ddf593"
+  integrity sha1-Li6yGCIpQGG4PUbLrv3QnYbd9ZM=
+
 test-exclude@^5.2.3:
   version "5.2.3"
   resolved "http://npm-registry.qunhequnhe.com/test-exclude/download/test-exclude-5.2.3.tgz#c3d3e1e311eb7ee405e092dac10aefd09091eac0"

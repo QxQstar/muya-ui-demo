@@ -18,6 +18,7 @@ import { LearnRef } from '../pages/useRef'
 import { MergeState } from '../pages/mergeState'
 import { ConputedW } from '../pages/conputedW'
 import { CanvasTree } from '../pages/canvasTree'
+import { WebglStar } from '../pages/webglStar'
 
 export default function (): ISilderMenu[] {
     return [
@@ -132,6 +133,11 @@ export default function (): ISilderMenu[] {
                     path: '/basic/webgl/WebglClickPoints',
                     menuName: '鼠标点击画点',
                     component: WebglClickPoints
+                },
+                {
+                    path: '/basic/webgl/WebglStar',
+                    menuName: 'WebGL 五角星',
+                    component: WebglStar
                 },
             ]
         }
