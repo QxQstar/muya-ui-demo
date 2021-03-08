@@ -19,6 +19,7 @@ import { MergeState } from '../pages/mergeState'
 import { ConputedW } from '../pages/conputedW'
 import { CanvasTree } from '../pages/canvasTree'
 import { WebglStar } from '../pages/webglStar'
+import { Webglcricle } from '../pages/webglcricle'
 
 export default function (): ISilderMenu[] {
     return [
@@ -138,6 +139,11 @@ export default function (): ISilderMenu[] {
                     path: '/basic/webgl/WebglStar',
                     menuName: 'WebGL 五角星',
                     component: WebglStar
+                },
+                {
+                    path: '/basic/webgl/Webglcricle',
+                    menuName: 'WebGL 圆',
+                    component: Webglcricle
                 },
             ]
         }

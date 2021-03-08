@@ -99,5 +99,5 @@ export default function WebglStar() {
         // gl.drawArrays(gl.POINTS,0,1)
 
     }, []);
-    return <canvas/>
+    return <canvas width="300" height="300"/>
 }

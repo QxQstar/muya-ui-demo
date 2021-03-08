@@ -32,11 +32,9 @@ export default function Home(props: IProps): React.ReactElement {
         // AXR.action.modifyGoodsAction.dispatch([{name: '苹果', price: '3'}])
     }
     return (
-      
         <div>
             {props.user.isFetching && <Spin color="orange" />}
             {!props.user.isFetching && props.user.data && props.user.data.name}
-            <input></input>
             <button onClick={callback}>fetch</button>
 
             <div style={{margin: '20px'}}>
