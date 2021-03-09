@@ -20,6 +20,8 @@ import { ConputedW } from '../pages/conputedW'
 import { CanvasTree } from '../pages/canvasTree'
 import { WebglStar } from '../pages/webglStar'
 import { Webglcricle } from '../pages/webglcricle'
+import { WebglReact } from '../pages/webglReact'
+import {WebglParticle} from '../pages/webglParticle'
 
 export default function (): ISilderMenu[] {
     return [
@@ -144,6 +146,16 @@ export default function (): ISilderMenu[] {
                     path: '/basic/webgl/Webglcricle',
                     menuName: 'WebGL 圆',
                     component: Webglcricle
+                },
+                {
+                    path: '/basic/webgl/WebglReact',
+                    menuName: 'WebGL 矩型',
+                    component: WebglReact
+                },
+                {
+                    path: '/basic/webgl/WebglParticle',
+                    menuName: 'WebGL 动画',
+                    component: WebglParticle
                 },
             ]
         }
