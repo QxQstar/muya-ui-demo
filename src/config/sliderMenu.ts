@@ -22,6 +22,9 @@ import { WebglStar } from '../pages/webglStar'
 import { Webglcricle } from '../pages/webglcricle'
 import { WebglReact } from '../pages/webglReact'
 import {WebglParticle} from '../pages/webglParticle'
+import {WebglColor} from '../pages/webglColor'
+import { WebglTranslate } from '../pages/webglTranslate'
+import { MutilPoints } from '../pages/mutilPoints'
 
 export default function (): ISilderMenu[] {
     return [
@@ -156,6 +159,21 @@ export default function (): ISilderMenu[] {
                     path: '/basic/webgl/WebglParticle',
                     menuName: 'WebGL 动画',
                     component: WebglParticle
+                },
+                {
+                    path: '/basic/webgl/WebglColor',
+                    menuName: 'WebGL 颜色',
+                    component: WebglColor
+                },
+                {
+                    path: '/basic/webgl/WebglTranslate',
+                    menuName: 'WebGL 平移',
+                    component: WebglTranslate
+                },
+                {
+                    path: '/basic/webgl/MutilPoints',
+                    menuName: 'WebGL 多个点',
+                    component: MutilPoints
                 },
             ]
         }
