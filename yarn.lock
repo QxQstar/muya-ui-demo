@@ -9375,7 +9375,7 @@ react-scripts@3.4.3:
   optionalDependencies:
     fsevents "2.1.2"
 
-react-transition-group@^4.2.1:
+react-transition-group@^4.2.1, react-transition-group@^4.4.1:
   version "4.4.1"
   resolved "http://npm-registry.qunhequnhe.com/react-transition-group/download/react-transition-group-4.4.1.tgz#63868f9325a38ea5ee9535d828327f85773345c9"
   integrity sha1-Y4aPkyWjjqXulTXYKDJ/hXczRck=

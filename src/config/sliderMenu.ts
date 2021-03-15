@@ -25,6 +25,7 @@ import {WebglParticle} from '../pages/webglParticle'
 import {WebglColor} from '../pages/webglColor'
 import { WebglTranslate } from '../pages/webglTranslate'
 import { MutilPoints } from '../pages/mutilPoints'
+import { ReactTransition } from '../pages/reactTransition'
 
 export default function (): ISilderMenu[] {
     return [
@@ -82,6 +83,11 @@ export default function (): ISilderMenu[] {
                     path: '/basic/component/ConputedW',
                     menuName: 'ConputedW',
                     component: ConputedW
+                },
+                {
+                    path: '/basic/component/ReactTransition',
+                    menuName: 'React 动画',
+                    component: ReactTransition
                 }
             ]
         },
