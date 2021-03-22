@@ -78,7 +78,7 @@ export default function PageHeader(props: any): React.ReactElement {
                             <h1
                                 className={style.title}
                             >
-                                muya-ui-demo
+                                demo
                             </h1>
                             <Dropdown
                                 overlay={<DropdownMenu

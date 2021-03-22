@@ -26,6 +26,7 @@ import {WebglColor} from '../pages/webglColor'
 import { WebglTranslate } from '../pages/webglTranslate'
 import { MutilPoints } from '../pages/mutilPoints'
 import { ReactTransition } from '../pages/reactTransition'
+import { WebglTexture } from '../pages/webglTexture'
 
 export default function (): ISilderMenu[] {
     return [
@@ -180,6 +181,11 @@ export default function (): ISilderMenu[] {
                     path: '/basic/webgl/MutilPoints',
                     menuName: 'WebGL 多个点',
                     component: MutilPoints
+                },
+                {
+                    path: '/basic/webgl/WebGLTexture',
+                    menuName: '单个纹理',
+                    component: WebglTexture
                 },
             ]
         }

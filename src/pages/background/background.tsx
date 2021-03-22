@@ -10,7 +10,30 @@ export default class Background extends React.Component {
     componentDidMount() {
         const canvas = document.querySelector('canvas')!
         draw(canvas);
+
+        const evt = document.createEvent('Event');
+        const fakeNode = document.createElement('react');
+        const evtType = 'fake-event'
+        
+        window.addEventListener('error', () => {
+            
+            console.log('two')
+        });
+
+        fakeNode.addEventListener(evtType, () => {
+            // 在这里调用用户提供的方法
+
+            console.log('one')
+            // JSON.parse("{ddd}")
+        }, false);
+
+        evt.initEvent(evtType, false, false);
+        fakeNode.dispatchEvent(evt);
+        console.log('three')
+
+        
     }
+     
     render () {
         return (
         <div>

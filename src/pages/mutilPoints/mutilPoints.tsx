@@ -13,9 +13,11 @@ void main(){
 
 const fragment = `
 precision mediump float;
+uniform float u_w;
+uniform float u_h;
 varying vec4 color;
 void main(){
-    gl_FragColor = color;
+    gl_FragColor = vec4(gl_FragCoord.x / u_w, 0.0, gl_FragCoord.y / u_h,1.0);
 }
 `
 
@@ -43,6 +45,13 @@ export default function MutilPoints() {
         const a_color = gl.getAttribLocation(program, 'a_color')
         gl.vertexAttribPointer(a_color,3,gl.FLOAT,false, FISZE * 5, FISZE * 2)
         gl.enableVertexAttribArray(a_color);
+
+        const u_w = gl.getUniformLocation(program,'u_w')
+        gl.uniform1f(u_w,gl.drawingBufferWidth)
+
+        const u_h = gl.getUniformLocation(program, 'u_h')
+        gl.uniform1f(u_h, gl.drawingBufferHeight)
+
         gl.clearColor(0,1,1,1)
         gl.clear(gl.COLOR_BUFFER_BIT)
         gl.drawArrays(gl.TRIANGLES,0, points.length / 5)
