@@ -1,36 +1,30 @@
-import React, { useReducer } from 'react';
+import React, {useContext } from 'react';
 
-interface IState {
-    count: number
-}
+import StateComponent, { globalContext } from './stateComponent'
 
-interface IAction {
-    type: string,
-    params?: any
-}
-
-const initState: IState = {count: 0}
-
-function reducer(state: IState, action: IAction): IState {
-    switch(action.type) {
-        case 'add':
-            return {count: state.count + 1}
-        case 'sub':
-            return {count: state.count - 1}
-        case 'reset':
-            return {count: initState.count}
-        default:
-            throw new Error();
-    }
-}
-
-export default function LearnReducer() {
-    const [state, dispatch] = useReducer(reducer, initState)
+function LearnReducer() {
+    const {countState, countDispatch, timeState} = useContext(globalContext)
 
     return <div>
-        <div>count: {state.count}</div>
-        <button onClick={() => dispatch({type: 'add'})}>add</button>
-        <button onClick={() => dispatch({type: 'sub'})}>sub</button>
-        <button onClick={() => dispatch({type: 'reset'})}>reset</button>
+        <div>count: {countState.count}, time: { timeState.time} </div>
+        <button onClick={() => countDispatch({type: 'add'})}>add</button>
+        <button onClick={() => countDispatch({type: 'sub'})}>sub</button>
+        <button onClick={() => countDispatch({type: 'reset'})}>reset</button>
     </div>
+}
+
+function ShowCount() {
+    const {timeDispatch} = useContext(globalContext)
+    return <div> 
+            <button onClick={() => timeDispatch({type: 'add'})}>add</button>
+            <button onClick={() => timeDispatch({type: 'sub'})}>sub</button>
+            <button onClick={() => timeDispatch({type: 'reset'})}>reset</button>
+        </div>
+}
+
+export default function () {
+    return <StateComponent>
+        <LearnReducer/>
+        <ShowCount/>
+    </StateComponent>
 }
