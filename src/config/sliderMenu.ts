@@ -28,6 +28,7 @@ import { MutilPoints } from '../pages/mutilPoints'
 import { ReactTransition } from '../pages/reactTransition'
 import { WebglTexture } from '../pages/webglTexture'
 import { RXJS } from '../pages/rxjs';
+import { WebglMutilTexture } from '../pages/webglMutilTexture'
 
 export default function (): ISilderMenu[] {
     return [
@@ -192,6 +193,11 @@ export default function (): ISilderMenu[] {
                     path: '/basic/webgl/WebGLTexture',
                     menuName: '单个纹理',
                     component: WebglTexture
+                },
+                {
+                    path: '/basic/webgl/WebglMutilTexture',
+                    menuName: '多个纹理',
+                    component: WebglMutilTexture
                 },
             ]
         }
