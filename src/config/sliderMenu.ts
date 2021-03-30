@@ -27,6 +27,7 @@ import { WebglTranslate } from '../pages/webglTranslate'
 import { MutilPoints } from '../pages/mutilPoints'
 import { ReactTransition } from '../pages/reactTransition'
 import { WebglTexture } from '../pages/webglTexture'
+import { RXJS } from '../pages/rxjs';
 
 export default function (): ISilderMenu[] {
     return [
@@ -89,6 +90,11 @@ export default function (): ISilderMenu[] {
                     path: '/basic/component/ReactTransition',
                     menuName: 'React 动画',
                     component: ReactTransition
+                },
+                {
+                    path: '/basic/component/RXJS',
+                    menuName: 'rxjs',
+                    component: RXJS
                 }
             ]
         },
