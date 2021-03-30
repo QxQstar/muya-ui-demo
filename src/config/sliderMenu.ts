@@ -29,6 +29,7 @@ import { ReactTransition } from '../pages/reactTransition'
 import { WebglTexture } from '../pages/webglTexture'
 import { RXJS } from '../pages/rxjs';
 import { WebglMutilTexture } from '../pages/webglMutilTexture'
+import { CanvasGrayImg } from '../pages/canvasGrayImg'
 
 export default function (): ISilderMenu[] {
     return [
@@ -132,6 +133,11 @@ export default function (): ISilderMenu[] {
                     path: '/basic/canvas/canvasTree',
                     menuName: 'canvasTree',
                     component: CanvasTree
+                },
+                {
+                    path: '/basic/canvas/CanvasGrayImg',
+                    menuName: '灰度图片',
+                    component: CanvasGrayImg
                 }
             ]
         },
