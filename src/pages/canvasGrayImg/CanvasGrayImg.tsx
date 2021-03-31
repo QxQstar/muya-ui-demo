@@ -1,45 +1,25 @@
 import React, { useEffect } from 'react';
-import {loadImg} from '../../libs/utils'
+import {loadImg, getImageData, traverse, IRGBA } from '../../libs/utils'
+import { transformColor, channel, brightness, opacity } from '../../libs/color-matrix'
 
 export default function CanvasGrayImg() {
-    const copy = (sourceCtx: CanvasRenderingContext2D, sourceCanvas:HTMLCanvasElement) => {
-        const imgData =sourceCtx.getImageData(0,0, sourceCanvas.width, sourceCanvas.height);
-        
-        for (let i = 0; i < imgData.data.length; i=i+4) {
-            const r = imgData.data[i];
-            const g = imgData.data[i + 1];
-            const b = imgData.data[i + 2];
-            const a = imgData.data[i + 3];
-
-            const v = 0.2126 * r + 0.7152 * g + 0.0722 * b;
-            imgData.data[i] = v;
-            imgData.data[i + 1] = v;
-            imgData.data[i + 2] = v;
-            imgData.data[i + 3] = a;
-        }
-
-        const canvas = document.getElementById('canvas2') as HTMLCanvasElement
-        const ctx = canvas.getContext('2d')!
-        canvas.width = sourceCanvas.width;
-        canvas.height = sourceCanvas.height;
-        ctx.putImageData(imgData, 0, 0)
-    }
     useEffect(() => {
         ( async function () {
             const canvas = document.getElementById('canvas1') as HTMLCanvasElement
             const ctx = canvas.getContext('2d')!
             const Img = await loadImg('/WechatIMG27.jpeg')
-            canvas.width = Img.width
+            canvas.width = Img.width 
             canvas.height = Img.height
-            ctx.drawImage(Img, 0, 0)
 
-            copy(ctx, canvas)
+            const imgData = traverse(getImageData(Img), ({r, g, b, a}: IRGBA): number[] => {
+                return transformColor([r,g,b,a], channel({g: 2}), brightness(0.8), opacity(1))
+            })
+            ctx.putImageData(imgData, 0, 0)
         })()
         
 
     }, []);
     return <>
         <canvas id="canvas1"/>
-        <canvas id="canvas2"/>
     </>
 }
