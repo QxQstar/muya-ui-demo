@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
-import {loadImg, getImageData, traverse, IRGBA } from '../../libs/utils'
-import { transformColor, channel, brightness, opacity } from '../../libs/color-matrix'
+import {loadImg, getImageData, traverse, IRGBA, gaussianBlur } from '../../libs/utils'
+import { transformColor, brightness } from '../../libs/color-matrix'
 
 export default function CanvasGrayImg() {
     useEffect(() => {
@@ -12,8 +12,10 @@ export default function CanvasGrayImg() {
             canvas.height = Img.height
 
             const imgData = traverse(getImageData(Img), ({r, g, b, a}: IRGBA): number[] => {
-                return transformColor([r,g,b,a], channel({g: 2}), brightness(0.8), opacity(1))
+                return transformColor([r,g,b,a], brightness(0.8))
             })
+
+            gaussianBlur(imgData.data, imgData.width, imgData.height, 10, 1.5)
             ctx.putImageData(imgData, 0, 0)
         })()
         
