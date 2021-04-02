@@ -136,7 +136,7 @@ export default function (): ISilderMenu[] {
                 },
                 {
                     path: '/basic/canvas/CanvasGrayImg',
-                    menuName: '灰度图片',
+                    menuName: 'canvas 滤镜',
                     component: CanvasGrayImg
                 }
             ]

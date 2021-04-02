@@ -136,3 +136,21 @@ export function gaussianBlur(pixels: Uint8ClampedArray, width: number, height: n
     }
     return pixels;
   }
+
+export function getPixels(imageData: ImageData, index: number) {
+    const data = imageData.data;
+    if (!data[index]) {
+        return {
+            r: 0,
+            g: 0,
+            b: 0,
+            a: 0
+        }
+    }
+    return {
+        r: data[index] / 255,
+        g: data[index + 1] / 255,
+        b: data[index + 2] / 255,
+        a: data[index + 3] / 255
+    }
+}
