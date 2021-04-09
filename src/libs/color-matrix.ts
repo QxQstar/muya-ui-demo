@@ -48,16 +48,16 @@ export function multiply(a: number[], b: number[]) {
 }
 
 // 灰度颜色矩阵
-export function grayscale(p: number = 1) {
-    const r = 0.2126 * p;
-    const g = 0.7152 * p;
-    const b = 0.0722 * p;
+export function grayscale() {
+    const r = 0.3;
+    const g = 0.59;
+    const b = 0.11;
   
   
     return [
-      r + 1 - p, g, b, 0, 0,
-      r, g + 1 - p, b, 0, 0,
-      r, g, b + 1 - p, 0, 0,
+      r, g, b, 0, 0,
+      r, g, b, 0, 0,
+      r, g, b, 0, 0,
       0, 0, 0, 1, 0,
     ];
   }
