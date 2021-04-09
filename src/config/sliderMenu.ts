@@ -30,6 +30,7 @@ import { WebglTexture } from '../pages/webglTexture'
 import { RXJS } from '../pages/rxjs';
 import { WebglMutilTexture } from '../pages/webglMutilTexture'
 import { CanvasGrayImg } from '../pages/canvasGrayImg'
+import { WebglBeautify } from '../pages/webglBeautify'
 
 export default function (): ISilderMenu[] {
     return [
@@ -204,6 +205,11 @@ export default function (): ISilderMenu[] {
                     path: '/basic/webgl/WebglMutilTexture',
                     menuName: '多个纹理',
                     component: WebglMutilTexture
+                },
+                {
+                    path: '/basic/webgl/WebglBeautify',
+                    menuName: 'webgl 美化图片',
+                    component: WebglBeautify
                 },
             ]
         }
