@@ -40,19 +40,28 @@ export default function WebglBeautify() {
         }
        
         gl.bindTexture(gl.TEXTURE_2D,texture)
-        
-        gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR);
-        gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
-        gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE);
-        gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
 
         gl.texImage2D(gl.TEXTURE_2D,0,gl.RGBA,gl.RGBA,gl.UNSIGNED_BYTE, img);
+
+        // 当纹理比填充区域大的时候纹理会被缩小，TEXTURE_MIN_FILTER 会起作用
+        gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.NEAREST_MIPMAP_LINEAR);
+        
+
+        // 当纹理比填充区域小的时候图片会被放大，TEXTURE_MAG_FILTER 会起作用
+        gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.NEAREST);
+
+        // 从纹理上取颜色，让坐标取值在 （0，1）之外时，TEXTURE_WRAP_S 和 TEXTURE_WRAP_T 会起作用
+        gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE);
+        gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
+   
+        gl.generateMipmap(gl.TEXTURE_2D);
 
         gl.uniform1i(u_sampler, index)
 
         if (count === 2) {
             gl.clearColor(0,0,0,1)
             gl.clear(gl.COLOR_BUFFER_BIT)
+            gl.bindTexture(gl.TEXTURE_2D,null)
     
             gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4)
         }
@@ -116,8 +125,8 @@ export default function WebglBeautify() {
             loadedImage(gl, texture2, u_sunlight, img2, 1)
         }
 
-        img.src = "/WechatIMG27.jpeg"
+        img.src = "/douluo.jpeg"
         img2.src = "/sunlight.png"
     }, []);
-    return <canvas width="725" height="408"/>
+    return <canvas width="512" height="256"/>
 }
