@@ -31,6 +31,7 @@ import { RXJS } from '../pages/rxjs';
 import { WebglMutilTexture } from '../pages/webglMutilTexture'
 import { CanvasGrayImg } from '../pages/canvasGrayImg'
 import { WebglBeautify } from '../pages/webglBeautify'
+import { WebglGeometry } from '../pages/webglGeometry'
 
 export default function (): ISilderMenu[] {
     return [
@@ -210,6 +211,11 @@ export default function (): ISilderMenu[] {
                     path: '/basic/webgl/WebglBeautify',
                     menuName: 'webgl 美化图片',
                     component: WebglBeautify
+                },
+                {
+                    path: '/basic/webgl/WebglGeometry',
+                    menuName: 'webgl 改变几何图像',
+                    component: WebglGeometry
                 },
             ]
         }
