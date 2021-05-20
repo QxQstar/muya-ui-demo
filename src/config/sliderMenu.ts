@@ -32,6 +32,7 @@ import { WebglMutilTexture } from '../pages/webglMutilTexture'
 import { CanvasGrayImg } from '../pages/canvasGrayImg'
 import { WebglBeautify } from '../pages/webglBeautify'
 import { WebglGeometry } from '../pages/webglGeometry'
+import { ThreeTrangle } from '../pages/3DTrangle';
 
 export default function (): ISilderMenu[] {
     return [
@@ -216,6 +217,17 @@ export default function (): ISilderMenu[] {
                     path: '/basic/webgl/WebglGeometry',
                     menuName: 'webgl 改变几何图像',
                     component: WebglGeometry
+                },
+            ]
+        },
+        {
+            path: '/basic/webgl3d',
+            menuName: 'webgl 3d', 
+            routes: [
+                {
+                    path: '/basic/webgl3d/3Dstart',
+                    menuName: 'webgl 3d 开始',
+                    component: ThreeTrangle
                 },
             ]
         }
