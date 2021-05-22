@@ -33,6 +33,7 @@ import { CanvasGrayImg } from '../pages/canvasGrayImg'
 import { WebglBeautify } from '../pages/webglBeautify'
 import { WebglGeometry } from '../pages/webglGeometry'
 import { ThreeTrangle } from '../pages/3DTrangle';
+import { Perspective } from '../pages/perspective';
 
 export default function (): ISilderMenu[] {
     return [
@@ -228,6 +229,11 @@ export default function (): ISilderMenu[] {
                     path: '/basic/webgl3d/3Dstart',
                     menuName: 'webgl 3d 开始',
                     component: ThreeTrangle
+                },
+                {
+                    path: '/basic/webgl3d/Perspective',
+                    menuName: 'webgl 透视投影',
+                    component: Perspective
                 },
             ]
         }
