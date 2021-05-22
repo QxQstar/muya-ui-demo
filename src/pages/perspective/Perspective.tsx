@@ -1,8 +1,6 @@
 import React, { useEffect } from 'react'
 import { webglRender } from '../../libs/webglRender'
 import { Matrix4 } from '../../libs/cuon-matrix';
-import { flush } from '@redux-saga/core/effects';
-import { getTokenSourceMapRange } from 'typescript';
 
 const vertex = `
 attribute vec3 a_position;

@@ -34,6 +34,7 @@ import { WebglBeautify } from '../pages/webglBeautify'
 import { WebglGeometry } from '../pages/webglGeometry'
 import { ThreeTrangle } from '../pages/3DTrangle';
 import { Perspective } from '../pages/perspective';
+import { WebglCube } from '../pages/webglCube';
 
 export default function (): ISilderMenu[] {
     return [
@@ -234,6 +235,11 @@ export default function (): ISilderMenu[] {
                     path: '/basic/webgl3d/Perspective',
                     menuName: 'webgl 透视投影',
                     component: Perspective
+                },
+                {
+                    path: '/basic/webgl3d/webglcube',
+                    menuName: 'webgl 立方体',
+                    component: WebglCube
                 },
             ]
         }
