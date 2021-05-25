@@ -27,12 +27,14 @@ export function webglRender(canvas: HTMLCanvasElement, vertex: string, fragment:
     }
 }
 
-export function createBuffer(gl: WebGLRenderingContext, program: WebGLProgram , location: string, data: Float32Array, size: number = 2) {
+export function createBuffer(gl: WebGLRenderingContext, program: WebGLProgram , location: string, data: Float32Array, size: number, type: number) {
     const buffer = gl.createBuffer()!
     gl.bindBuffer(gl.ARRAY_BUFFER, buffer);
     gl.bufferData(gl.ARRAY_BUFFER, data, gl.STATIC_DRAW)
 
     const aLocation = gl.getAttribLocation(program, location)
-    gl.vertexAttribPointer(aLocation, size, gl.FLOAT, false, 0, 0);
+    gl.vertexAttribPointer(aLocation, size, type, false, 0, 0);
     gl.enableVertexAttribArray(aLocation);
+
+    // gl.bindBuffer(gl.ARRAY_BUFFER, null);
 }

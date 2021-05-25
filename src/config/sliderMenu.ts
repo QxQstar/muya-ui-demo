@@ -35,6 +35,7 @@ import { WebglGeometry } from '../pages/webglGeometry'
 import { ThreeTrangle } from '../pages/3DTrangle';
 import { Perspective } from '../pages/perspective';
 import { WebglCube } from '../pages/webglCube';
+import { WebglLightCube } from '../pages/webglLightCube';
 
 export default function (): ISilderMenu[] {
     return [
@@ -240,6 +241,11 @@ export default function (): ISilderMenu[] {
                     path: '/basic/webgl3d/webglcube',
                     menuName: 'webgl 立方体',
                     component: WebglCube
+                },
+                {
+                    path: '/basic/webgl3d/webglLightCube',
+                    menuName: '立方体-漫反射',
+                    component: WebglLightCube
                 },
             ]
         }

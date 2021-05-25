@@ -83,7 +83,7 @@ export default function WebglTranslate() {
             -0.9,-0.1
         ])
 
-        createBuffer(gl, program, 'a_position', points,2)
+        createBuffer(gl, program, 'a_position', points,2, gl.FLOAT)
         update(gl, points, program)
 
     }, []);
