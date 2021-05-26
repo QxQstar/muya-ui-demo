@@ -37,6 +37,7 @@ import { Perspective } from '../pages/perspective';
 import { WebglCube } from '../pages/webglCube';
 import { WebglLightCube } from '../pages/webglLightCube';
 import { WebglPointLightCube } from '../pages/webglPointLightCube';
+import { WebglPointLightCubeFragment } from '../pages/webglPointLightCubeFragment'
 
 export default function (): ISilderMenu[] {
     return [
@@ -252,6 +253,11 @@ export default function (): ISilderMenu[] {
                     path: '/basic/webgl3d/webglPointLightCube',
                     menuName: '立方体-点光源漫反射',
                     component: WebglPointLightCube
+                },
+                {
+                    path: '/basic/webgl3d/webglPointLightCubeFragment',
+                    menuName: '立方体-点光源漫反射-逐片元',
+                    component: WebglPointLightCubeFragment
                 }
             ]
         }
