@@ -38,6 +38,8 @@ import { WebglCube } from '../pages/webglCube';
 import { WebglLightCube } from '../pages/webglLightCube';
 import { WebglPointLightCube } from '../pages/webglPointLightCube';
 import { WebglPointLightCubeFragment } from '../pages/webglPointLightCubeFragment'
+import { WebglTextureCube } from '../pages/webglTextureCube'
+
 
 export default function (): ISilderMenu[] {
     return [
@@ -258,6 +260,11 @@ export default function (): ISilderMenu[] {
                     path: '/basic/webgl3d/webglPointLightCubeFragment',
                     menuName: '立方体-点光源漫反射-逐片元',
                     component: WebglPointLightCubeFragment
+                },
+                {
+                    path: '/basic/webgl3d/webglTextureCube',
+                    menuName: '立方体-纹理',
+                    component: WebglTextureCube
                 }
             ]
         }
