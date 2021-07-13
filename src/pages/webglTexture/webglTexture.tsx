@@ -7,7 +7,7 @@ attribute vec2 a_texture;
 varying vec2 v_texture;
 
 void main(){
-    gl_Position = a_position;
+    gl_Position =  a_position;
     v_texture = a_texture;
 }
 `
@@ -27,6 +27,7 @@ export default function WebglTexture() {
         const canvas = document.querySelector('canvas')!
         const {program, gl} = webglRender(canvas, vertex, fragment)
 
+        // 使用缓存对象往顶点着色器中传值
         const data = new Float32Array([
             -1, 1, 0.0, 1.0,
             -1, -1, 0.0, 0.0,
@@ -48,8 +49,6 @@ export default function WebglTexture() {
         const a_texture = gl.getAttribLocation(program, 'a_texture')
         gl.vertexAttribPointer(a_texture,2, gl.FLOAT, false, BYTES_PER_ELEMENT * 4, BYTES_PER_ELEMENT * 2)
         gl.enableVertexAttribArray(a_texture)
-        // 使用缓存对象往顶点着色器中传值
-
 
         // 创建纹理对象，并且准备好纹理图片
         const texture = gl.createTexture()!
@@ -57,6 +56,28 @@ export default function WebglTexture() {
         var image = new Image()
 
         image.onload = function () {
+            const IW = image.width
+            const IH = image.height
+
+            const CW = canvas.width
+            const CH = canvas.height
+
+            let height = CH
+            let width = CW;
+
+            if (IW / IH > CW / CH) {
+                width = Math.min(IW, CW)
+                height = IH / IW * width
+            } else {
+                height = Math.min(CH, IH)
+                width = IW / IH * height
+            }
+
+            const x = Math.abs((CW - width) / 2)
+            const y = Math.abs((CH - height) / 2)
+
+            gl.viewport(x,y, width, height)
+
             // 将纹理图像进行 Y 轴翻转
             gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, 1)
 
@@ -78,7 +99,7 @@ export default function WebglTexture() {
             gl.uniform1i(u_sampler, 0)
 
             // 绘制
-            gl.clearColor(0,0,0,1)
+            gl.clearColor(0.0,0.0,0,1)
             gl.clear(gl.COLOR_BUFFER_BIT)
 
             gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4)
@@ -89,7 +110,7 @@ export default function WebglTexture() {
         image.src="/WechatIMG27.jpeg"
     }, []);
     return <>
-        <canvas width="300" height="300"/>
+        <canvas width="1000" height="300"/>
     </>
     
 }

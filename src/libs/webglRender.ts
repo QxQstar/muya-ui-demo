@@ -36,5 +36,5 @@ export function createBuffer(gl: WebGLRenderingContext, program: WebGLProgram , 
     gl.vertexAttribPointer(aLocation, size, type, false, 0, 0);
     gl.enableVertexAttribArray(aLocation);
 
-    // gl.bindBuffer(gl.ARRAY_BUFFER, null);
+    gl.bindBuffer(gl.ARRAY_BUFFER, null);
 }
