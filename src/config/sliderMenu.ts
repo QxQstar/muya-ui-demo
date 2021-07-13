@@ -40,6 +40,7 @@ import { WebglPointLightCube } from '../pages/webglPointLightCube';
 import { WebglPointLightCubeFragment } from '../pages/webglPointLightCubeFragment'
 import { WebglTextureCube } from '../pages/webglTextureCube'
 import { WebglTriangleAndTexture } from '../pages/webglTriangleAndTexture';
+import { WebglShareBuffer } from '../pages/webglShareBuffer';
 
 
 export default function (): ISilderMenu[] {
@@ -230,6 +231,11 @@ export default function (): ISilderMenu[] {
                     path: '/basic/webgl/WebglTriangleAndTexture',
                     menuName: 'webgl 三角形和纹理',
                     component: WebglTriangleAndTexture
+                },
+                {
+                    path: '/basic/webgl/WebglShareBuffer',
+                    menuName: '共享 buffer',
+                    component: WebglShareBuffer
                 }
             ]
         },
