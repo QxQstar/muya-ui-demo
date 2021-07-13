@@ -39,6 +39,7 @@ import { WebglLightCube } from '../pages/webglLightCube';
 import { WebglPointLightCube } from '../pages/webglPointLightCube';
 import { WebglPointLightCubeFragment } from '../pages/webglPointLightCubeFragment'
 import { WebglTextureCube } from '../pages/webglTextureCube'
+import { WebglTriangleAndTexture } from '../pages/webglTriangleAndTexture';
 
 
 export default function (): ISilderMenu[] {
@@ -225,6 +226,11 @@ export default function (): ISilderMenu[] {
                     menuName: 'webgl 改变几何图像',
                     component: WebglGeometry
                 },
+                {
+                    path: '/basic/webgl/WebglTriangleAndTexture',
+                    menuName: 'webgl 三角形和纹理',
+                    component: WebglTriangleAndTexture
+                }
             ]
         },
         {
