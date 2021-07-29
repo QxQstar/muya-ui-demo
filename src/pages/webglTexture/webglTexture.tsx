@@ -17,8 +17,9 @@ varying vec2 v_texture;
 uniform sampler2D u_sampler;
 
 void main(){
-    gl_FragColor = texture2D(u_sampler, v_texture);
-    // gl_FragColor = vec4(v_texture, 1.0, 1.0);
+    vec4 color = texture2D(u_sampler, v_texture);
+    
+    gl_FragColor = vec4(vec3(color.rgb) * vec3(2.0), color.a);
 }
 `
 
@@ -104,8 +105,6 @@ export default function WebglTexture() {
 
             gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4)
         }
-        
-        // image.src='/logo512.png'
 
         image.src="/WechatIMG27.jpeg"
     }, []);

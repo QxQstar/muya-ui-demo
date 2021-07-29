@@ -41,6 +41,7 @@ import { WebglPointLightCubeFragment } from '../pages/webglPointLightCubeFragmen
 import { WebglTextureCube } from '../pages/webglTextureCube'
 import { WebglTriangleAndTexture } from '../pages/webglTriangleAndTexture';
 import { WebglShareBuffer } from '../pages/webglShareBuffer';
+import { WebglVideo } from '../pages/webglVideo'
 
 
 export default function (): ISilderMenu[] {
@@ -236,6 +237,11 @@ export default function (): ISilderMenu[] {
                     path: '/basic/webgl/WebglShareBuffer',
                     menuName: '共享 buffer',
                     component: WebglShareBuffer
+                },
+                {
+                    path: '/basic/webgl/WebglVideo',
+                    menuName: 'webgl 视频',
+                    component: WebglVideo
                 }
             ]
         },

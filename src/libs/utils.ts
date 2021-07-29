@@ -13,12 +13,14 @@ export function loadImg(src: string) {
 }
 
 const imageDataContext = new WeakMap<HTMLImageElement, OffscreenCanvasRenderingContext2D>();
+
 export function getImageData(img: HTMLImageElement) {
     let context: OffscreenCanvasRenderingContext2D;
     if (imageDataContext.has(img)) {
         context = imageDataContext.get(img)!;
     } else {
         const canvas = new OffscreenCanvas(img.width, img.height);
+        // const canvas = document.querySelector('canvas')
         context = canvas.getContext('2d')!; 
         context.drawImage(img, 0, 0); 
         imageDataContext.set(img, context);
@@ -87,7 +89,7 @@ export function traverse(imageData: ImageData, pass: (param: IRGBA) => number[])
   * @return {Array}
   */
 export function gaussianBlur(pixels: Uint8ClampedArray, width: number, height: number, radius: number = 3, sigma: number = radius / 3): Uint8ClampedArray {
-    const {matrix, sum} = gaussianMatrix(radius, sigma);
+    const {matrix} = gaussianMatrix(radius, sigma);
     // x 方向一维高斯运算
     for(let y = 0; y < height; y++) {
       for(let x = 0; x < width; x++) {
@@ -105,10 +107,9 @@ export function gaussianBlur(pixels: Uint8ClampedArray, width: number, height: n
           }
         }
         const i = (y * width + x) * 4;
-        // 除以 sum 是为了消除处于边缘的像素, 高斯运算不足的问题
-        pixels[i] = r / sum;
-        pixels[i + 1] = g / sum;
-        pixels[i + 2] = b / sum;
+        pixels[i] = r;
+        pixels[i + 1] = g;
+        pixels[i + 2] = b;
       }
     }
   
@@ -129,9 +130,9 @@ export function gaussianBlur(pixels: Uint8ClampedArray, width: number, height: n
           }
         }
         const i = (y * width + x) * 4;
-        pixels[i] = r / sum;
-        pixels[i + 1] = g / sum;
-        pixels[i + 2] = b / sum;
+        pixels[i] = r;
+        pixels[i + 1] = g;
+        pixels[i + 2] = b;
       }
     }
     return pixels;
