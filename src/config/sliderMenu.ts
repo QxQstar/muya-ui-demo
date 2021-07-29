@@ -42,6 +42,7 @@ import { WebglTextureCube } from '../pages/webglTextureCube'
 import { WebglTriangleAndTexture } from '../pages/webglTriangleAndTexture';
 import { WebglShareBuffer } from '../pages/webglShareBuffer';
 import { WebglVideo } from '../pages/webglVideo'
+import { FramebufferObject } from '../pages/framebufferObject'
 
 
 export default function (): ISilderMenu[] {
@@ -283,6 +284,11 @@ export default function (): ISilderMenu[] {
                     path: '/basic/webgl3d/webglTextureCube',
                     menuName: '立方体-纹理',
                     component: WebglTextureCube
+                },
+                {
+                    path: '/basic/webgl3d/FramebufferObject',
+                    menuName: '帧缓冲区',
+                    component: FramebufferObject
                 }
             ]
         }
