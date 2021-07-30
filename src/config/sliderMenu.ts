@@ -43,6 +43,7 @@ import { WebglTriangleAndTexture } from '../pages/webglTriangleAndTexture';
 import { WebglShareBuffer } from '../pages/webglShareBuffer';
 import { WebglVideo } from '../pages/webglVideo'
 import { FramebufferObject } from '../pages/framebufferObject'
+import { FramebufferObjectColor } from '../pages/framebufferObjectColor'
 
 
 export default function (): ISilderMenu[] {
@@ -289,6 +290,11 @@ export default function (): ISilderMenu[] {
                     path: '/basic/webgl3d/FramebufferObject',
                     menuName: '帧缓冲区',
                     component: FramebufferObject
+                },
+                {
+                    path: '/basic/webgl3d/FramebufferObjectColor',
+                    menuName: '帧缓冲区 color',
+                    component: FramebufferObjectColor
                 }
             ]
         }
