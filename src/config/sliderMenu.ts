@@ -44,6 +44,7 @@ import { WebglShareBuffer } from '../pages/webglShareBuffer';
 import { WebglVideo } from '../pages/webglVideo'
 import { FramebufferObject } from '../pages/framebufferObject'
 import { FramebufferObjectColor } from '../pages/framebufferObjectColor'
+import { CreatePortal } from '../pages/createPortal';
 
 
 export default function (): ISilderMenu[] {
@@ -77,6 +78,11 @@ export default function (): ISilderMenu[] {
                     path: '/basic/component/useEffect',
                     menuName: 'useEffect',
                     component: LearnEffect
+                },
+                {
+                    path: '/basic/component/createPortal',
+                    menuName: 'createPortal',
+                    component: CreatePortal
                 },
                 {
                     path: '/basic/component/useContext',
