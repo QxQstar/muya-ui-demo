@@ -45,6 +45,7 @@ import { WebglVideo } from '../pages/webglVideo'
 import { FramebufferObject } from '../pages/framebufferObject'
 import { FramebufferObjectColor } from '../pages/framebufferObjectColor'
 import { CreatePortal } from '../pages/createPortal';
+import { AudioTest } from '../pages/audio';
 
 
 export default function (): ISilderMenu[] {
@@ -118,6 +119,11 @@ export default function (): ISilderMenu[] {
                     path: '/basic/component/RXJS',
                     menuName: 'rxjs',
                     component: RXJS
+                },
+                {
+                    path: '/basic/component/AudioTest',
+                    menuName: 'Audio API',
+                    component: AudioTest
                 }
             ]
         },
