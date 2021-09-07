@@ -46,6 +46,7 @@ import { FramebufferObject } from '../pages/framebufferObject'
 import { FramebufferObjectColor } from '../pages/framebufferObjectColor'
 import { CreatePortal } from '../pages/createPortal';
 import { AudioTest } from '../pages/audio';
+import { AudioWave } from '../pages/audioWave'
 
 
 export default function (): ISilderMenu[] {
@@ -124,6 +125,11 @@ export default function (): ISilderMenu[] {
                     path: '/basic/component/AudioTest',
                     menuName: 'Audio API',
                     component: AudioTest
+                },
+                {
+                    path: '/basic/component/AudioWave',
+                    menuName: 'Audio 波形图',
+                    component: AudioWave
                 }
             ]
         },

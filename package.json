@@ -7,8 +7,10 @@
   ],
   "dependencies": {
     "@loadable/component": "^5.13.2",
+    "@qunhe/math": "^2.12.30",
     "@qunhe/muya-theme-light": "^0.3.20",
     "@qunhe/muya-ui": "^0.4.29",
+    "@qunhe/pixi.js": "^4.8.30",
     "@reduxjs/toolkit": "^1.4.0",
     "@types/react": "^16.9.49",
     "@types/react-dom": "^16.9.8",
