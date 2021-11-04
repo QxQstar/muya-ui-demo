@@ -46,7 +46,8 @@ import { FramebufferObject } from '../pages/framebufferObject'
 import { FramebufferObjectColor } from '../pages/framebufferObjectColor'
 import { CreatePortal } from '../pages/createPortal';
 import { AudioTest } from '../pages/audio';
-import { AudioWave } from '../pages/audioWave'
+import { AudioWave } from '../pages/audioWave';
+import { ReactRender } from '../pages/render'
 
 
 export default function (): ISilderMenu[] {
@@ -56,6 +57,11 @@ export default function (): ISilderMenu[] {
             exact: true,
             menuName: '首页',
             component: Home
+        },
+        {
+            path: '/render',
+            menuName: 'render',
+            component: ReactRender
         },
         {
             path: '/theme',

@@ -33,7 +33,7 @@ export default function ReactTransitiom() {
                     <CSSTransition
                         key={item.id}
                         timeout={500}
-                        className="react-transition-item"
+                        classNames="react-transition-item"
                     >
                         <div>
                             {item.name}
