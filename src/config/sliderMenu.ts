@@ -48,6 +48,7 @@ import { CreatePortal } from '../pages/createPortal';
 import { AudioTest } from '../pages/audio';
 import { AudioWave } from '../pages/audioWave';
 import { ReactRender } from '../pages/render'
+import { Promise } from '../pages/promise'
 
 
 export default function (): ISilderMenu[] {
@@ -62,6 +63,11 @@ export default function (): ISilderMenu[] {
             path: '/render',
             menuName: 'render',
             component: ReactRender
+        },
+        {
+            path: '/promise',
+            menuName: 'promise',
+            component: Promise
         },
         {
             path: '/theme',
