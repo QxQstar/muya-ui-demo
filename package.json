@@ -11,6 +11,8 @@
     "@qunhe/muya-theme-light": "^0.3.20",
     "@qunhe/muya-ui": "^0.4.29",
     "@qunhe/pixi.js": "^4.8.30",
+    "@qunhe/tools-ui": "^0.5.211",
+    "@qunhe/tools-ui-pro": "^0.1.120",
     "@reduxjs/toolkit": "^1.4.0",
     "@types/react": "^16.9.49",
     "@types/react-dom": "^16.9.8",

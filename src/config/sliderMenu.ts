@@ -49,6 +49,7 @@ import { AudioTest } from '../pages/audio';
 import { AudioWave } from '../pages/audioWave';
 import { ReactRender } from '../pages/render'
 import { Promise } from '../pages/promise'
+import BaseDemo from '../pages/doc'
 
 
 export default function (): ISilderMenu[] {
@@ -58,6 +59,11 @@ export default function (): ISilderMenu[] {
             exact: true,
             menuName: '首页',
             component: Home
+        },
+        {
+            path: '/do',
+            menuName: '移动面板',
+            component: BaseDemo
         },
         {
             path: '/render',
