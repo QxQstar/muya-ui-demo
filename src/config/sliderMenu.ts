@@ -49,7 +49,8 @@ import { AudioTest } from '../pages/audio';
 import { AudioWave } from '../pages/audioWave';
 import { ReactRender } from '../pages/render'
 import { Promise } from '../pages/promise'
-import BaseDemo from '../pages/doc'
+import BaseDemo from '../pages/panel'
+import Drag from '../pages/drag'
 
 
 export default function (): ISilderMenu[] {
@@ -64,6 +65,11 @@ export default function (): ISilderMenu[] {
             path: '/do',
             menuName: '移动面板',
             component: BaseDemo
+        },
+        {
+            path: '/drag',
+            menuName: "拖动",
+            component: Drag
         },
         {
             path: '/render',

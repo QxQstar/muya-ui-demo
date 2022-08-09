@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Spin } from '@qunhe/muya-ui';
 import { IStateShpeUser } from './../../reducers/user'
 import { IGoodsShape, IFetchGoodsParam, IAction as GoodsAction, IGoods } from '../../reducers/goods'
